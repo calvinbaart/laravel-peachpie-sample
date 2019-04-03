@@ -314,9 +314,7 @@ class Handler implements ExceptionHandlerContract
     protected function renderExceptionContent(Exception $e)
     {
         try {
-            return config('app.debug') && class_exists(Whoops::class)
-                        ? $this->renderExceptionWithWhoops($e)
-                        : $this->renderExceptionWithSymfony($e, config('app.debug'));
+            return $this->renderExceptionWithSymfony($e, config('app.debug'));
         } catch (Exception $e) {
             return $this->renderExceptionWithSymfony($e, config('app.debug'));
         }

@@ -802,17 +802,16 @@ class Container implements ArrayAccess, ContainerContract
 
         $this->buildStack[] = $concrete;
 
-        $constructor = $reflector->getConstructor();
-
         // If there are no constructors, that means there are no dependencies then
         // we can just resolve the instances of the objects right away, without
         // resolving any other types or dependencies out of these containers.
-        if (is_null($constructor)) {
+        if (!$reflector->hasMethod("__construct")) {
             array_pop($this->buildStack);
 
             return new $concrete;
         }
 
+        $constructor = $reflector->getConstructor();
         $dependencies = $constructor->getParameters();
 
         // Once we have all the constructor's parameters we can create each of the

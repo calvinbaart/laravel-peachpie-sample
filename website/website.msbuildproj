@@ -1,4 +1,4 @@
-<Project Sdk="Peachpie.NET.Sdk/0.9.38">
+﻿<Project Sdk="Peachpie.NET.Sdk/0.9.38">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <VersionPrefix>5.8.9</VersionPrefix>
@@ -8,7 +8,6 @@
     <Description>Laravel project transformed to managed .NET Standard library.</Description>
     <DefineConstants>PEACHPIE</DefineConstants>
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Include="
       dummy.php;
@@ -28,7 +27,10 @@
         **/spec/**;
         vendor/symfony/polyfill-util/LegacyTestListener.php;
         vendor/symfony/polyfill-util/TestListenerForV5.php;
+        vendor/symfony/polyfill-util/TestListenerForV6.php;
+        vendor/symfony/polyfill-util/TestListenerForV7.php;
         vendor/symfony/polyfill-util/TestListener.php;
+        vendor/calvinbaart/laravel-peachpie/src/Illuminate/Cache/ApcWrapper.php;
       "/>
   </ItemGroup>
 </Project>

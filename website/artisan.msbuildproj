@@ -9,21 +9,10 @@
     <Description>Laravel project transformed to managed .NET Standard library.</Description>
   </PropertyGroup>
 
-
-      <!-- vendor/jeremeamia/**/*.php; -->
-      <!-- vendor/opis/**/*.php; -->
   <ItemGroup>
     <Compile Include="
       dummy.php;
-      vendor/calvinbaart/**/*.php;
-      vendor/nesbot/**/*.php;
-      vendor/symfony/**/*.php;
-      vendor/psr/**/*.php;
-      vendor/doctrine/**/*.php;
-      vendor/fideloper/**/*.php;
-      vendor/league/**/*.php;
-      vendor/swiftmailer/**/*.php;
-      vendor/nikic/**/*.php;
+      vendor/**/*.php;
       app/**/*.php;
       config/**/*.php;
       bootstrap/**/*.php;

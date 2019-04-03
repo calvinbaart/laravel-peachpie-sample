@@ -2465,15 +2465,15 @@ trait Date
         }
 
         if (!static::hasMacro($method)) {
-            foreach ([$this->localGenericMacros ?: [], static::getGenericMacros()] as $list) {
-                foreach ($list as $callback) {
-                    try {
-                        return $this->executeCallable($callback, $method, ...$parameters);
-                    } catch (BadMethodCallException $exception) {
-                        continue;
-                    }
-                }
-            }
+            // foreach ([$this->localGenericMacros ?: [], static::getGenericMacros()] as $list) {
+            //     foreach ($list as $callback) {
+            //         try {
+            //             return $this->executeCallable($callback, $method, ...$parameters);
+            //         } catch (BadMethodCallException $exception) {
+            //             continue;
+            //         }
+            //     }
+            // }
             if ($this->localStrictModeEnabled ?? static::isStrictModeEnabled()) {
                 throw new BadMethodCallException("Method $method does not exist.");
             }
