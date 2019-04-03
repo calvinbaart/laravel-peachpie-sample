@@ -81,6 +81,7 @@ class LoadConfiguration
      */
     protected function getConfigurationFiles(Application $app)
     { 
+        // todo: This breaks normal PHP. Need to figure out a way that works in both PHP and PeachPie
         $files = [];
 
         $configPath = realpath($app->configPath());

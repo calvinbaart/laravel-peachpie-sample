@@ -313,6 +313,7 @@ class Handler implements ExceptionHandlerContract
      */
     protected function renderExceptionContent(Exception $e)
     {
+        //todo: whoops is broken on PeachPie. Figure out why
         try {
             return $this->renderExceptionWithSymfony($e, config('app.debug'));
         } catch (Exception $e) {

@@ -77,6 +77,8 @@ trait Creator
         if (isset($locale)) {
             setlocale(LC_NUMERIC, $locale);
         }
+
+        //todo: uncomment this when getLastErrors is implemented in PeachPie
         //static::setLastErrors(parent::getLastErrors());
     }
 
