@@ -70,6 +70,10 @@ trait RouteDependencyResolverTrait
     {
         $class = $parameter->getClass();
 
+        if ($class->name === "Closure") {
+            return null;
+        }
+        
         // If the parameter has a type-hinted class, we will check to see if it is already in
         // the list of parameters. If it is we will just skip it as it is probably a model
         // binding and we do not want to mess with those; otherwise, we resolve it here.

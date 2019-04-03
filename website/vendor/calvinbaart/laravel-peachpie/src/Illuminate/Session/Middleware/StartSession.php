@@ -189,9 +189,10 @@ class StartSession
     {
         $config = $this->manager->getSessionConfig();
 
-        return $config['expire_on_close'] ? 0 : Date::instance(
-            Carbon::now()->addRealMinutes($config['lifetime'])
-        );
+        // todo: figure out why the Date facade can't resolve
+        return $config['expire_on_close'] ? 0 : //Date::instance(
+            Carbon::now()->addRealMinutes($config['lifetime']);
+        //);
     }
 
     /**
