@@ -1,0 +1,48 @@
+<Project Sdk="Peachpie.NET.Sdk/0.9.38">
+  <PropertyGroup>
+    <OutputType>exe</OutputType>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <VersionPrefix>5.8.9</VersionPrefix>
+    <PackageVersion>5.8.9</PackageVersion>
+    <NoWarn>PHP0125,PHP5011,PHP5012,PHP5016,PHP5008,PHP5006,PHP5022,PHP5025,PHP5029,PHP5014,PHP5009,PHP5015,PHP5028,PHP5026,PHP5007</NoWarn>
+    <Copyright>Laravel</Copyright>
+    <Description>Laravel project transformed to managed .NET Standard library.</Description>
+  </PropertyGroup>
+
+
+      <!-- vendor/jeremeamia/**/*.php; -->
+      <!-- vendor/opis/**/*.php; -->
+  <ItemGroup>
+    <Compile Include="
+      dummy.php;
+      vendor/calvinbaart/**/*.php;
+      vendor/nesbot/**/*.php;
+      vendor/symfony/**/*.php;
+      vendor/psr/**/*.php;
+      vendor/doctrine/**/*.php;
+      vendor/fideloper/**/*.php;
+      vendor/league/**/*.php;
+      vendor/swiftmailer/**/*.php;
+      vendor/nikic/**/*.php;
+      app/**/*.php;
+      config/**/*.php;
+      bootstrap/**/*.php;
+      routes/**/*.php;
+      artisan;
+      storage/framework/views/**/*.php;
+    " Exclude="
+        **/Testing/**;
+        **/Tests/**;
+        **/Test/**;
+        **/Mockery/**;
+        **/Mock/**;
+        **/spec/**;
+        vendor/symfony/polyfill-util/LegacyTestListener.php;
+        vendor/symfony/polyfill-util/TestListenerForV5.php;
+        vendor/symfony/polyfill-util/TestListenerForV6.php;
+        vendor/symfony/polyfill-util/TestListenerForV7.php;
+        vendor/symfony/polyfill-util/TestListener.php;
+        vendor/calvinbaart/laravel-peachpie/src/Illuminate/Cache/ApcWrapper.php;
+      "/>
+  </ItemGroup>
+</Project>
