@@ -70,7 +70,7 @@ trait RouteDependencyResolverTrait
     {
         $class = $parameter->getClass();
 
-        if ($class->name === "Closure") {
+        if ($class && $class->name === "Closure") {
             return null;
         }
         

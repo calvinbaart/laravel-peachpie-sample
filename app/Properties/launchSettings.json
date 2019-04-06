@@ -2,18 +2,25 @@
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
+    "iis": {
+      "applicationUrl": "http://localhost/app",
+      "sslPort": 0
+    },
     "iisExpress": {
-      "applicationUrl": "http://localhost:61198/",
+      "applicationUrl": "http://localhost:5004/",
       "sslPort": 0
     }
   },
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
+      "workingDirectory": "C:\\Development\\laravel-peachpie-sample\\app\\bin\\Debug\\netcoreapp2.1",
       "launchBrowser": true,
       "environmentVariables": {
+        "APP_BASE_PATH": "C:\\Development\\laravel-peachpie-sample\\app\\bin\\Debug\\netcoreapp2.1",
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "use64Bit": true
     },
     "app": {
       "commandName": "Project",

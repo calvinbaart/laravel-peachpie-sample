@@ -81,7 +81,22 @@ class LoadConfiguration
      */
     protected function getConfigurationFiles(Application $app)
     { 
-        // todo: This breaks normal PHP. Need to figure out a way that works in both PHP and PeachPie
+        if (app()->runningInConsole()) {
+            $files = [];
+
+            $configPath = realpath($app->configPath());
+
+            foreach (Finder::create()->files()->name('*.php')->in($configPath) as $file) {
+                $directory = $this->getNestedDirectory($file, $configPath);
+
+                $files[$directory.basename($file->getRealPath(), '.php')] = $file->getRealPath();
+            }
+
+            ksort($files, SORT_NATURAL);
+
+            return $files;
+        }
+        
         $files = [];
 
         $configPath = realpath($app->configPath());
@@ -97,19 +112,6 @@ class LoadConfiguration
         ksort($files, SORT_NATURAL);
 
         return $files;
-        // $files = [];
-
-        // $configPath = realpath($app->configPath());
-
-        // foreach (Finder::create()->files()->name('*.php')->in($configPath) as $file) {
-        //     $directory = $this->getNestedDirectory($file, $configPath);
-
-        //     $files[$directory.basename($file->getRealPath(), '.php')] = $file->getRealPath();
-        // }
-
-        // ksort($files, SORT_NATURAL);
-
-        // return $files;
     }
 
     /**

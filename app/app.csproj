@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Peachpie.AspNetCore.Web" Version="0.9.38" />
+    <PackageReference Include="Peachpie.AspNetCore.Web" Version="0.9.9-dev" />
+    <PackageReference Include="Peachpie.Library.PDO.MySql" Version="0.9.9-dev" />
     <PackageReference Include="Microsoft.AspNetCore.All" />
   </ItemGroup>
 

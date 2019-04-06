@@ -1,4 +1,4 @@
-﻿<Project Sdk="Peachpie.NET.Sdk/0.9.38">
+<Project Sdk="Peachpie.NET.Sdk/0.9.9-dev">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <VersionPrefix>5.8.9</VersionPrefix>
