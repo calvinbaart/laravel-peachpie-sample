@@ -2,55 +2,27 @@
 
 /*
 |--------------------------------------------------------------------------
-| Application Routes
+| Web Routes
 |--------------------------------------------------------------------------
 |
-| This route group applies the "web" middleware group to every route
-| it contains. The "web" middleware group is defined in your HTTP
-| kernel and includes session state, CSRF protection, and more.
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
 |
 */
 
-use App\Task;
-use Illuminate\Http\Request;
 
-Route::group(['middleware' => ['web']], function () {
-    /**
-     * Show Task Dashboard
-     */
-    Route::get('/', function () {
-        return view('tasks', [
-            'tasks' => Task::orderBy('created_at', 'asc')->get()
-        ]);
-    });
+Route::get('/', 'TestController@index')->name('home_test');
 
-    /**
-     * Add New Task
-     */
-    Route::post('/task', function (Request $request) {
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|max:255',
-        ]);
+Route::group(['middleware' => 'auth'], function () {
+    Route::resource('projects', 'ProjectsController');
 
-        if ($validator->fails()) {
-            return redirect('/')
-                ->withInput()
-                ->withErrors($validator);
-        }
+    Route::post('/projects/{project}/tasks', 'ProjectTasksController@store');
+    Route::patch('/projects/{project}/tasks/{task}', 'ProjectTasksController@update');
 
-        $task = new Task;
-        $task->name = $request->name;
-        $task->save();
+    Route::post('/projects/{project}/invitations', 'ProjectInvitationsController@store');
 
-        return redirect('/');
-    });
-
-    /**
-     * Delete Task
-     */
-    Route::delete('/task/{id}', function ($id) {
-        Task::findOrFail($id)->delete();
-
-        return redirect('/');
-    });
+    Route::get('/home', 'HomeController@index')->name('home');
 });
+
+Auth::routes();

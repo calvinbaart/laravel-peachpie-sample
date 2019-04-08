@@ -1,11 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26228.10
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "app", "app\app.csproj", "{522CE9E1-278C-4E0B-AD0A-DBC1B87F72E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "app", "app\app.csproj", "{522CE9E1-278C-4E0B-AD0A-DBC1B87F72E6}"
 EndProject
-Project("{13B669BE-BB05-4DDF-9536-439F39A36129}") = "website", "website\website.msbuildproj", "{5196D6E7-B0F7-47E3-B387-3A5AFDDCBF3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Laravel.Sdk", "Laravel.Sdk\Laravel.Sdk.csproj", "{4C16B482-2426-4010-81E5-A1C182274B1C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Laravel.AspNetCore", "Laravel.AspNetCore\Laravel.AspNetCore.csproj", "{E5E6A871-8E82-447C-AA63-BBA4D5C38497}"
+EndProject
+Project("{13B669BE-BB05-4DDF-9536-439F39A36129}") = "Laravel", "Laravel\Laravel.msbuildproj", "{2DC6323F-0F1C-4244-A978-696BB905BBE8}"
+EndProject
+Project("{13B669BE-BB05-4DDF-9536-439F39A36129}") = "website", "website\website.msbuildproj", "{6F6646B2-D685-400C-A6C9-C452D320FDF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +23,27 @@ Global
 		{522CE9E1-278C-4E0B-AD0A-DBC1B87F72E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{522CE9E1-278C-4E0B-AD0A-DBC1B87F72E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{522CE9E1-278C-4E0B-AD0A-DBC1B87F72E6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5196D6E7-B0F7-47E3-B387-3A5AFDDCBF3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5196D6E7-B0F7-47E3-B387-3A5AFDDCBF3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5196D6E7-B0F7-47E3-B387-3A5AFDDCBF3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5196D6E7-B0F7-47E3-B387-3A5AFDDCBF3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C16B482-2426-4010-81E5-A1C182274B1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C16B482-2426-4010-81E5-A1C182274B1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C16B482-2426-4010-81E5-A1C182274B1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C16B482-2426-4010-81E5-A1C182274B1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5E6A871-8E82-447C-AA63-BBA4D5C38497}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5E6A871-8E82-447C-AA63-BBA4D5C38497}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5E6A871-8E82-447C-AA63-BBA4D5C38497}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5E6A871-8E82-447C-AA63-BBA4D5C38497}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DC6323F-0F1C-4244-A978-696BB905BBE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DC6323F-0F1C-4244-A978-696BB905BBE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DC6323F-0F1C-4244-A978-696BB905BBE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DC6323F-0F1C-4244-A978-696BB905BBE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F6646B2-D685-400C-A6C9-C452D320FDF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F6646B2-D685-400C-A6C9-C452D320FDF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F6646B2-D685-400C-A6C9-C452D320FDF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F6646B2-D685-400C-A6C9-C452D320FDF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E5A207A4-7E0D-4BEA-AFD1-066B60FCFAA5}
 	EndGlobalSection
 EndGlobal

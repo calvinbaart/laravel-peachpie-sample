@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Laravel.AspNetCore</name>
+    </assembly>
+    <members>
+        <member name="M:Laravel.AspNetCore.Internal.EnumerationExtensions.IsEmpty``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Gets value indicating whether the enumeration is null or empty for sure.
+            </summary>
+        </member>
+        <member name="M:Laravel.AspNetCore.Internal.EnumerationExtensions.ConcatSafe``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Safely concatenates two enumerations. They both can be <c>null</c>.
+            The method always returns non-null object.
+            </summary>
+        </member>
+        <member name="M:Laravel.AspNetCore.Internal.EnumerationExtensions.ArrayConcat``1(``0,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Creates array with concatenation of given item and an enumeration.
+            </summary>
+        </member>
+        <member name="T:Laravel.AspNetCore.RequestDelegateExtension">
+            <summary>
+            <see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/> extension for enabling Laravel.
+            </summary>
+        </member>
+        <member name="M:Laravel.AspNetCore.RequestDelegateExtension.ShortUrlRule(Microsoft.AspNetCore.Rewrite.RewriteContext,Microsoft.Extensions.FileProviders.IFileProvider)">
+            <summary>Redirect to `index.php` if the the file does not exist.</summary>
+        </member>
+        <member name="M:Laravel.AspNetCore.RequestDelegateExtension.Apply(Pchp.Core.Context,Laravel.Sdk.LaravelLoader)">
+            <summary>
+            Defines Laravel configuration constants and initializes runtime before proceeding to <c>index.php</c>.
+            </summary>
+        </member>
+        <member name="P:Laravel.AspNetCore.RequestDelegateExtension.LaravelAssemblyName">
+            <summary>Class <see cref="T:Illuminate.Foundation.Application"/> is compiled in PHP assembly <c>Laravel.dll</c>.</summary>
+        </member>
+        <member name="M:Laravel.AspNetCore.RequestDelegateExtension.UseLaravel(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.String[],System.String)">
+            <summary>
+            Installs Laravel middleware.
+            </summary>
+            <param name="app">The application builder.</param>
+            <param name="assemblies">Additional Script assemblies to load</param>
+            <param name="path">Physical location of laravel folder. Can be absolute or relative to the current directory.</param>
+        </member>
+    </members>
+</doc>

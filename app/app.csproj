@@ -11,7 +11,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\website\website.msbuildproj">
+    <ProjectReference Include="../Laravel.AspNetCore/Laravel.AspNetCore.csproj">
+      <PrivateAssets>None</PrivateAssets>
+    </ProjectReference>
+
+    <ProjectReference Include="../Laravel/Laravel.msbuildproj">
+      <PrivateAssets>None</PrivateAssets>
+    </ProjectReference>
+    
+    <ProjectReference Include="../website/website.msbuildproj">
       <PrivateAssets>None</PrivateAssets>
     </ProjectReference>
   </ItemGroup>
@@ -25,30 +33,15 @@
       <ViewCache Include="$(ProjectDir)../website/storage/framework/views/**" />
     </ItemGroup>
 
-    <Copy SourceFiles="$(ProjectDir)../website/.env"
-        DestinationFolder="$(TargetDir)"
-        SkipUnchangedFiles="false"
-        OverwriteReadOnlyFiles="true" />
+    <Copy SourceFiles="$(ProjectDir)../website/.env" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
 
-    <Copy SourceFiles="@(Config)"
-        DestinationFolder="$(TargetDir)\config\%(RecursiveDir)"
-        SkipUnchangedFiles="false"
-        OverwriteReadOnlyFiles="true" />
+    <Copy SourceFiles="@(Config)" DestinationFolder="$(TargetDir)\config\%(RecursiveDir)" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
 
-    <Copy SourceFiles="@(Routes)"
-        DestinationFolder="$(TargetDir)\routes\%(RecursiveDir)"
-        SkipUnchangedFiles="false"
-        OverwriteReadOnlyFiles="true" />
+    <Copy SourceFiles="@(Routes)" DestinationFolder="$(TargetDir)\routes\%(RecursiveDir)" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
 
-    <Copy SourceFiles="@(Resources)"
-        DestinationFolder="$(TargetDir)\resources\%(RecursiveDir)"
-        SkipUnchangedFiles="false"
-        OverwriteReadOnlyFiles="true" />
+    <Copy SourceFiles="@(Resources)" DestinationFolder="$(TargetDir)\resources\%(RecursiveDir)" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
 
-    <Copy SourceFiles="@(Public)"
-        DestinationFolder="$(TargetDir)\public\%(RecursiveDir)"
-        SkipUnchangedFiles="false"
-        OverwriteReadOnlyFiles="true" />
+    <Copy SourceFiles="@(Public)" DestinationFolder="$(TargetDir)\public\%(RecursiveDir)" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
 
     <MakeDir Directories="$(TargetDir)\storage" />
     <MakeDir Directories="$(TargetDir)\storage\app" />
@@ -59,9 +52,6 @@
     <MakeDir Directories="$(TargetDir)\storage\framework\views" />
     <MakeDir Directories="$(TargetDir)\storage\logs" />
 
-    <Copy SourceFiles="@(ViewCache)"
-        DestinationFolder="$(TargetDir)\storage\framework\views\%(RecursiveDir)"
-        SkipUnchangedFiles="false"
-        OverwriteReadOnlyFiles="true" />
+    <Copy SourceFiles="@(ViewCache)" DestinationFolder="$(TargetDir)\storage\framework\views\%(RecursiveDir)" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
   </Target>
 </Project>

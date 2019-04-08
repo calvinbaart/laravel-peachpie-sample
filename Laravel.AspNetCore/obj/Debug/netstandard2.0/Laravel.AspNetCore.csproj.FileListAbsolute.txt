@@ -1,0 +1,17 @@
+C:\Development\laravel-peachpie-sample\Laravel.AspNetCore\obj\Debug\netstandard2.0\Laravel.AspNetCore.csprojAssemblyReference.cache
+C:\Development\laravel-peachpie-sample\Laravel.AspNetCore\obj\Debug\netstandard2.0\Laravel.AspNetCore.csproj.CoreCompileInputs.cache
+C:\Development\laravel-peachpie-sample\Laravel.AspNetCore\obj\Debug\netstandard2.0\Laravel.AspNetCore.AssemblyInfoInputs.cache
+C:\Development\laravel-peachpie-sample\Laravel.AspNetCore\obj\Debug\netstandard2.0\Laravel.AspNetCore.AssemblyInfo.cs
+C:\Development\laravel-peachpie-sample\Laravel.AspNetCore\bin\Debug\netstandard2.0\Laravel.AspNetCore.deps.json
+C:\Development\laravel-peachpie-sample\Laravel.AspNetCore\bin\Debug\netstandard2.0\Laravel.AspNetCore.dll
+C:\Development\laravel-peachpie-sample\Laravel.AspNetCore\bin\Debug\netstandard2.0\Laravel.AspNetCore.pdb
+C:\Development\laravel-peachpie-sample\Laravel.AspNetCore\bin\Debug\netstandard2.0\Laravel.AspNetCore.xml
+C:\Development\laravel-peachpie-sample\Laravel.AspNetCore\bin\Debug\netstandard2.0\Laravel.dll
+C:\Development\laravel-peachpie-sample\Laravel.AspNetCore\bin\Debug\netstandard2.0\Laravel.Sdk.dll
+C:\Development\laravel-peachpie-sample\Laravel.AspNetCore\bin\Debug\netstandard2.0\Laravel.pdb
+C:\Development\laravel-peachpie-sample\Laravel.AspNetCore\bin\Debug\netstandard2.0\Laravel.Sdk.pdb
+C:\Development\laravel-peachpie-sample\Laravel.AspNetCore\bin\Debug\netstandard2.0\Laravel.Sdk.xml
+C:\Development\laravel-peachpie-sample\Laravel.AspNetCore\obj\Debug\netstandard2.0\Laravel.AspNetCore.csproj.CopyComplete
+C:\Development\laravel-peachpie-sample\Laravel.AspNetCore\obj\Debug\netstandard2.0\Laravel.AspNetCore.dll
+C:\Development\laravel-peachpie-sample\Laravel.AspNetCore\obj\Debug\netstandard2.0\Laravel.AspNetCore.xml
+C:\Development\laravel-peachpie-sample\Laravel.AspNetCore\obj\Debug\netstandard2.0\Laravel.AspNetCore.pdb

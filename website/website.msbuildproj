@@ -8,14 +8,20 @@
     <Description>Laravel project transformed to managed .NET Standard library.</Description>
     <DefineConstants>PEACHPIE</DefineConstants>
   </PropertyGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\Laravel.Sdk\Laravel.Sdk.csproj" />
+    <ProjectReference Include="..\Laravel\Laravel.msbuildproj" />
+  </ItemGroup>
+
   <ItemGroup>
     <Compile Include="
       dummy.php;
-      vendor/**/*.php;
       app/**/*.php;
       config/**/*.php;
       bootstrap/**/*.php;
       routes/**/*.php;
+      vendor/**/*.php;
       public/index.php;
       storage/framework/views/**/*.php;
     " Exclude="

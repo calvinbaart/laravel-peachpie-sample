@@ -54,7 +54,7 @@
 
 
 <?php if(isset($actionText)): ?>
-<?php $__env->startComponent('mail::subcopy'); ?>
+<?php $__env->slot('subcopy'); ?>
 <?php echo app('translator')->getFromJson(
     "If you’re having trouble clicking the \":actionText\" button, copy and paste the URL below\n".
     'into your web browser: [:actionURL](:actionURL)',
@@ -63,7 +63,7 @@
         'actionURL' => $actionUrl,
     ]
 ); ?>
-<?php echo $__env->renderComponent(); ?>
+<?php $__env->endSlot(); ?>
 <?php endif; ?>
 <?php echo $__env->renderComponent(); ?>
 

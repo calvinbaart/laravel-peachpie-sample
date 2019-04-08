@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Laravel.Sdk</id>
+    <version>1.0.0</version>
+    <authors>Laravel.Sdk</authors>
+    <owners>Laravel.Sdk</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://s.w.org/style/images/about/WordPress-logotype-wmark-white.png</iconUrl>
+    <description>Package Description</description>
+    <repository type="git" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Peachpie.Runtime" version="0.9.9-dev" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Development\laravel-peachpie-sample\Laravel.Sdk\bin\Debug\netstandard2.0\Laravel.Sdk.dll" target="lib\netstandard2.0\Laravel.Sdk.dll" />
+    <file src="C:\Development\laravel-peachpie-sample\Laravel.Sdk\bin\Debug\netstandard2.0\Laravel.Sdk.xml" target="lib\netstandard2.0\Laravel.Sdk.xml" />
+  </files>
+</package>
