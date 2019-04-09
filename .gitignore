@@ -1,5 +1,9 @@
 website/bin
 website/obj
+website/node_modules
+website/vendor
+website/public/js
+website/public/css
 app/bin
 app/obj
 Laravel/bin
