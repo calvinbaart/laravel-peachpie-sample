@@ -60,8 +60,7 @@ final class ServiceValueResolver implements ArgumentValueResolverInterface
      */
     public function resolve(Request $request, ArgumentMetadata $argument)
     {
-        \System\Console::Write("ServiceValueResolver::resolve called.\r\n");
-        /*if (\is_array($controller = $request->attributes->get('_controller'))) {
+        if (\is_array($controller = $request->attributes->get('_controller'))) {
             $controller = $controller[0].'::'.$controller[1];
         }
 
@@ -75,7 +74,7 @@ final class ServiceValueResolver implements ArgumentValueResolverInterface
         }
 
         try {
-            yield $this->container->get($controller)->get($argument->getName());
+            $argument = $this->container->get($controller)->get($argument->getName());
         } catch (RuntimeException $e) {
             $what = sprintf('argument $%s of "%s()"', $argument->getName(), $controller);
             $message = preg_replace('/service "\.service_locator\.[^"]++"/', $what, $e->getMessage());
@@ -89,6 +88,8 @@ final class ServiceValueResolver implements ArgumentValueResolverInterface
             $r->setValue($e, $message);
 
             throw $e;
-        }*/
+        }
+
+		yield $argument;
     }
 }

@@ -2,4 +2,10 @@ website/bin
 website/obj
 app/bin
 app/obj
+Laravel/bin
+Laravel/obj
+Laravel.Sdk/bin
+Laravel.Sdk/obj
+Laravel.AspNetCore/bin
+Laravel.AspNetCore/obj
 .vs

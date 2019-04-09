@@ -1,10 +1,11 @@
-C:\Development\laravel-peachpie-sample\Laravel.Sdk\obj\Debug\netstandard2.0\Laravel.Sdk.csproj.CoreCompileInputs.cache
-C:\Development\laravel-peachpie-sample\Laravel.Sdk\obj\Debug\netstandard2.0\Laravel.Sdk.AssemblyInfoInputs.cache
-C:\Development\laravel-peachpie-sample\Laravel.Sdk\obj\Debug\netstandard2.0\Laravel.Sdk.AssemblyInfo.cs
 C:\Development\laravel-peachpie-sample\Laravel.Sdk\bin\Debug\netstandard2.0\Laravel.Sdk.deps.json
 C:\Development\laravel-peachpie-sample\Laravel.Sdk\bin\Debug\netstandard2.0\Laravel.Sdk.dll
 C:\Development\laravel-peachpie-sample\Laravel.Sdk\bin\Debug\netstandard2.0\Laravel.Sdk.pdb
 C:\Development\laravel-peachpie-sample\Laravel.Sdk\bin\Debug\netstandard2.0\Laravel.Sdk.xml
+C:\Development\laravel-peachpie-sample\Laravel.Sdk\obj\Debug\netstandard2.0\Laravel.Sdk.csproj.CoreCompileInputs.cache
+C:\Development\laravel-peachpie-sample\Laravel.Sdk\obj\Debug\netstandard2.0\Laravel.Sdk.AssemblyInfoInputs.cache
+C:\Development\laravel-peachpie-sample\Laravel.Sdk\obj\Debug\netstandard2.0\Laravel.Sdk.AssemblyInfo.cs
 C:\Development\laravel-peachpie-sample\Laravel.Sdk\obj\Debug\netstandard2.0\Laravel.Sdk.dll
 C:\Development\laravel-peachpie-sample\Laravel.Sdk\obj\Debug\netstandard2.0\Laravel.Sdk.xml
 C:\Development\laravel-peachpie-sample\Laravel.Sdk\obj\Debug\netstandard2.0\Laravel.Sdk.pdb
+C:\Development\laravel-peachpie-sample\Laravel.Sdk\obj\Debug\netstandard2.0\Laravel.Sdk.csprojAssemblyReference.cache

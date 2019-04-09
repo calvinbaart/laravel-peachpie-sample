@@ -10,12 +10,12 @@
  * file that was distributed with this source code.
  */
 
-namespace LaravelComposer\Autoload;
+namespace Composer\Autoload;
 
 /**
  * ClassLoader implements a PSR-0, PSR-4 and classmap class loader.
  *
- *     $loader = new \LaravelComposer\Autoload\ClassLoader();
+ *     $loader = new \Composer\Autoload\ClassLoader();
  *
  *     // register classes with namespaces
  *     $loader->add('Symfony\Component', __DIR__.'/component');
@@ -40,7 +40,7 @@ namespace LaravelComposer\Autoload;
  * @see    http://www.php-fig.org/psr/psr-0/
  * @see    http://www.php-fig.org/psr/psr-4/
  */
-class LaravelClassLoader
+class ClassLoader
 {
     // PSR-4
     private $prefixLengthsPsr4 = array();

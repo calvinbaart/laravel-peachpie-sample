@@ -13,6 +13,8 @@ Project("{13B669BE-BB05-4DDF-9536-439F39A36129}") = "Laravel", "Laravel\Laravel.
 EndProject
 Project("{13B669BE-BB05-4DDF-9536-439F39A36129}") = "website", "website\website.msbuildproj", "{6F6646B2-D685-400C-A6C9-C452D320FDF5}"
 EndProject
+Project("{13B669BE-BB05-4DDF-9536-439F39A36129}") = "Laravel.Tests", "Laravel\Laravel.Tests.msbuildproj", "{09A46739-2080-49D6-A213-504BAFF3C200}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{6F6646B2-D685-400C-A6C9-C452D320FDF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F6646B2-D685-400C-A6C9-C452D320FDF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F6646B2-D685-400C-A6C9-C452D320FDF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09A46739-2080-49D6-A213-504BAFF3C200}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09A46739-2080-49D6-A213-504BAFF3C200}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09A46739-2080-49D6-A213-504BAFF3C200}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09A46739-2080-49D6-A213-504BAFF3C200}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
