@@ -9,13 +9,13 @@
 * file that was distributed with this source code.
 */
 
-/*function main()
+function main()
 {
     if (!ini_get('date.timezone')) {
         ini_set('date.timezone', 'UTC');
     }
 
-    foreach (array(__DIR__ . '/../../autoload.php', __DIR__ . '/../vendor/autoload.php', __DIR__ . '/vendor/autoload.php') as $file) {
+    foreach (array(__DIR__ . '/../../laravel_autoload.php', __DIR__ . '/../vendor/laravel_autoload.php', __DIR__ . '/vendor/laravel_autoload.php') as $file) {
         if (file_exists($file)) {
             define('PHPUNIT_COMPOSER_INSTALL', $file);
             break;
@@ -42,18 +42,30 @@
     PHPUnit\TextUI\Command::main();
 }
 
-main();*/
+main();
 
-$tmp1 = function (stdClass $user) {
-	return true;
-};
+// class Test1
+// {
+//     public function func1()
+//     {
+//     }
 
-$tmp2 = function (?stdClass $user) {
-	return true;
-};
+//     public function func2()
+//     {
+//         return 10;
+//     }
 
-$param1 = (new ReflectionFunction($tmp1))->getParameters()[0];
-$param2 = (new ReflectionFunction($tmp2))->getParameters()[0];
+//     public function func3(): int
+//     {
+//         return 10;
+//     }
+// }
 
-echo $param1->allowsNull() ? "true\r\n" : "false\r\n";
-echo $param2->allowsNull() ? "true\r\n" : "false\r\n";
+// $tmp1 = new \ReflectionClass(Test1::class);
+// $method1 = $tmp1->getMethod("func1");
+// $method2 = $tmp1->getMethod("func2");
+// $method3 = $tmp1->getMethod("func3");
+
+// echo $method1->hasReturnType() ? "true" : "false";
+// echo $method2->hasReturnType() ? "true" : "false";
+// echo $method3->hasReturnType() ? "true" : "false";

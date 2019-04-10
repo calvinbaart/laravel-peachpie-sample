@@ -17,10 +17,10 @@
       <Tests Include="$(ProjectDir)tests/**" />
     </ItemGroup>
 
-    <Copy SourceFiles="$(ProjectDir)vendor/autoload.php" DestinationFolder="$(TargetDir)/vendor" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
+    <Copy SourceFiles="$(ProjectDir)vendor/laravel_autoload.php" DestinationFolder="$(TargetDir)/vendor" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
     <Copy SourceFiles="$(ProjectDir)phpunit.xml" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
     <Copy SourceFiles="@(Tests)" DestinationFolder="$(TargetDir)\tests\%(RecursiveDir)" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
-
+    <Copy SourceFiles="$(ProjectDir)vendor/mockery/mockery/library/Mockery/Mock.php" DestinationFolder="$(TargetDir)/vendor/mockery/mockery/library/Mockery" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
     <MakeDir Directories="$(TargetDir)\vendor" />
   </Target>
 
