@@ -12,4 +12,7 @@ Laravel.Sdk/bin
 Laravel.Sdk/obj
 Laravel.AspNetCore/bin
 Laravel.AspNetCore/obj
+Laravel.Tests/bin
+Laravel.Tests/obj
+Laravel.Tests/vendor
 .vs

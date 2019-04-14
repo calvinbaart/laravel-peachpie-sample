@@ -4,4 +4,5 @@
 
 require_once __DIR__ . '/laravel_composer/autoload_real.php';
 
+\System\Console::Write("Here2");
 return ComposerAutoloaderInit3c9d054f74e89aa42e19c65a3744904e::getLoader();

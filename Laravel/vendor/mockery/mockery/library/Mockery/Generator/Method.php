@@ -53,8 +53,7 @@ class Method
             return '';
         }
 
-		// todo: https://github.com/peachpiecompiler/peachpie/issues/419
-        if (version_compare(PHP_VERSION, '7.0.0-dev') >= 0 && false) {//$this->method->hasReturnType()) {
+        if (version_compare(PHP_VERSION, '7.0.0-dev') >= 0 && $this->method->hasReturnType()) {
             $returnType = (string) $this->method->getReturnType();
 
             if ('self' === $returnType) {

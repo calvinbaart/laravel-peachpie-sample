@@ -1,4 +1,4 @@
-﻿<Project Sdk="Peachpie.NET.Sdk/0.9.9-dev">
+<Project Sdk="Peachpie.NET.Sdk/0.9.9-dev">
   <PropertyGroup>
     <OutputType>exe</OutputType>
     <TargetFramework>netcoreapp2.1</TargetFramework>
@@ -10,14 +10,16 @@
   
   <ItemGroup>
     <ProjectReference Include="..\Laravel.Sdk\Laravel.Sdk.csproj" />
+    <ProjectReference Include="..\Laravel\Laravel.msbuildproj" />
   </ItemGroup>
 
   <Target Name="CopyLinkedContentFiles" BeforeTargets="Build">
     <ItemGroup>
-      <Tests Include="$(ProjectDir)tests/**" />
+      <Tests Include="$(ProjectDir)tests/**" Exclude="$(ProjectDir)tests/Database/stubs/**"/>
     </ItemGroup>
 
-    <Copy SourceFiles="$(ProjectDir)vendor/laravel_autoload.php" DestinationFolder="$(TargetDir)/vendor" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
+    <Copy SourceFiles="$(ProjectDir)../Laravel/vendor/laravel_autoload.php" DestinationFolder="$(TargetDir)/vendor" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
+    <Copy SourceFiles="$(ProjectDir)vendor/autoload.php" DestinationFolder="$(TargetDir)/vendor" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
     <Copy SourceFiles="$(ProjectDir)phpunit.xml" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
     <Copy SourceFiles="@(Tests)" DestinationFolder="$(TargetDir)\tests\%(RecursiveDir)" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
     <Copy SourceFiles="$(ProjectDir)vendor/mockery/mockery/library/Mockery/Mock.php" DestinationFolder="$(TargetDir)/vendor/mockery/mockery/library/Mockery" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
@@ -27,23 +29,17 @@
   <ItemGroup>
     <Compile Include="
       main.php;
-      dummy.php;
+      tests/**/*.php;
       vendor/**/*.php;
       src/**/*.php;
-      tests/**/*.php;
     " Exclude="
-        vendor/**/Testing/**;
-        vendor/**/Tests/**;
-        vendor/**/Test/**;
-        vendor/**/Mock/**;
-        vendor/**/spec/**;
-        vendor/bin/**;
-        vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/Legacy/**;
-        vendor/symfony/polyfill-util/LegacyTestListener.php;
-        vendor/symfony/polyfill-util/TestListenerForV5.php;
-        vendor/symfony/polyfill-util/TestListenerForV6.php;
-        vendor/symfony/polyfill-util/TestListenerForV7.php;
-        vendor/symfony/polyfill-util/TestListener.php;
-      "/>
+      tests/Database/**/*.php;
+      vendor/**/tests/**;
+      vendor/mockery/mockery/library/Mockery/Mock.php;
+      vendor\mockery\mockery\library\Mockery\Adapter\Phpunit\Legacy\TestListenerForV5.php;
+      vendor\mockery\mockery\library\Mockery\Adapter\Phpunit\Legacy\TestListenerForV6.php;
+      vendor/fzaninotto/faker/test/**;
+      vendor/myclabs/**;
+    "/>
   </ItemGroup>
 </Project>

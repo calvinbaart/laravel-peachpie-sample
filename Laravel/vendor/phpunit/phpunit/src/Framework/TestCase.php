@@ -880,6 +880,8 @@ abstract class TestCase extends Assert implements Test, SelfDescribing
         } catch (PredictionException $e) {
             $this->status        = BaseTestRunner::STATUS_FAILURE;
             $this->statusMessage = $e->getMessage();
+
+            \System\Console::Write("Message: " . $e->getMessage());
         } catch (Throwable $_e) {
             $e                   = $_e;
             $this->status        = BaseTestRunner::STATUS_ERROR;

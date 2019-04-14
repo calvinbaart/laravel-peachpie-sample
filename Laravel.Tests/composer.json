@@ -1,0 +1,12 @@
+{
+    "name": "Laravel.Tests",
+    "require": {
+        "phpunit/phpunit": "^8.1",
+        "mockery/mockery": "^1.2",
+        "orchestra/testbench": "^3.8"
+    },
+    "replace": {
+        "laravel/framework": "*",
+        "nesbot/carbon": "*"
+    }
+}
