@@ -10,6 +10,7 @@
             "args": [],
             "cwd": "${workspaceRoot}/website",
             "stopAtEntry": false,
+            "justMyCode": false,
             "externalConsole": false
         },
         {
@@ -47,7 +48,7 @@
             "name": ".NET Core Attach",
             "type": "coreclr",
             "request": "attach",
-            "processId": "${command.pickProcess}"
+            "processId": "${command:pickProcess}"
         }
     ]
 }

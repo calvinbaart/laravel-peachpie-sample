@@ -1,6 +1,7 @@
-<Project Sdk="Peachpie.NET.Sdk/0.9.38">
+<Project Sdk="Peachpie.NET.Sdk/0.9.9-dev">
   <PropertyGroup>
     <OutputType>exe</OutputType>
+    <StartupObject>artisan</StartupObject>
     <TargetFramework>netstandard2.0</TargetFramework>
     <VersionPrefix>5.8.9</VersionPrefix>
     <PackageVersion>5.8.9</PackageVersion>
