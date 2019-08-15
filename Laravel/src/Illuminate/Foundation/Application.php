@@ -137,6 +137,11 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
     protected $namespace;
 
     /**
+     * @var LaravelApp
+     */
+    protected $laravelApp;
+
+    /**
      * Create a new Illuminate application instance.
      *
      * @param  string|null  $basePath
@@ -151,6 +156,26 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
         $this->registerBaseBindings();
         $this->registerBaseServiceProviders();
         $this->registerCoreContainerAliases();
+
+        $this->laravelApp = new class extends \Laravel\Sdk\LaravelApp
+        {
+            public function GetVersion()
+            {
+                return Application::VERSION;
+            }
+
+            public function InternalRegisterController($name, $controller)
+            {
+                app()->bind($name, $controller);
+            }
+
+            public function InternalSetUserModel($userModel)
+            {
+            }
+        };
+
+        global $peachpie_laravel_loader;
+        $peachpie_laravel_loader->InternalAppStarted($this->laravelApp);
     }
 
     /**

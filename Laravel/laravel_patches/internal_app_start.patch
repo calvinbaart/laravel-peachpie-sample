@@ -1,0 +1,41 @@
+--- src/Illuminate/Foundation/Application.php	2019-08-15 21:33:01.000000000 +0200
++++ src/Illuminate/Foundation/Application.php	2019-08-15 21:53:42.000000000 +0200
+@@ -137,6 +137,11 @@
+     protected $namespace;
+
+     /**
++     * @var LaravelApp
++     */
++    protected $laravelApp;
++
++    /**
+      * Create a new Illuminate application instance.
+      *
+      * @param  string|null  $basePath
+@@ -151,6 +156,26 @@
+         $this->registerBaseBindings();
+         $this->registerBaseServiceProviders();
+         $this->registerCoreContainerAliases();
++
++        $this->laravelApp = new class extends \Laravel\Sdk\LaravelApp
++        {
++            public function GetVersion()
++            {
++                return Application::VERSION;
++            }
++
++            public function InternalRegisterController($name, $controller)
++            {
++                app()->bind($name, $controller);
++            }
++
++            public function InternalSetUserModel($userModel)
++            {
++            }
++        };
++
++        global $peachpie_laravel_loader;
++        $peachpie_laravel_loader->InternalAppStarted($this->laravelApp);
+     }
+
+     /**
