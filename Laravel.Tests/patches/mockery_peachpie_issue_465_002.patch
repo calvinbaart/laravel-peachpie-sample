@@ -1,0 +1,11 @@
+--- vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCase.php	2019-08-15 17:19:44.000000000 +0200
++++ vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryTestCase.php	2019-08-15 17:26:41.000000000 +0200
+@@ -27,7 +27,7 @@
+ }
+ abstract class MockeryTestCase extends \PHPUnit\Framework\TestCase
+ {
+-    use MockeryPHPUnitIntegration, MockeryTestCaseSetUp;
++    use MockeryPHPUnitIntegration, MockeryTestCaseSetUpForV8;
+
+     protected function mockeryTestSetUp()
+     {

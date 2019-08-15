@@ -1,0 +1,11 @@
+--- vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php	2019-08-15 17:25:12.000000000 +0200
++++ vendor/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php	2019-08-15 17:24:59.000000000 +0200
+@@ -34,7 +34,7 @@
+  */
+ trait MockeryPHPUnitIntegration
+ {
+-    use MockeryPHPUnitIntegrationAssertPostConditions;
++    use MockeryPHPUnitIntegrationAssertPostConditionsForV8;
+
+     protected $mockeryOpen;
+

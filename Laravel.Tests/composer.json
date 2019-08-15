@@ -8,5 +8,10 @@
     "replace": {
         "laravel/framework": "*",
         "nesbot/carbon": "*"
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "find patches -type f -name '*.patch' -print0 | sort -z | xargs -t -0 -n 1 patch -p0 -i"
+        ]
     }
 }

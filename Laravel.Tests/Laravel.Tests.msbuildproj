@@ -34,7 +34,6 @@
       vendor/**/*.php;
       src/**/*.php;
     " Exclude="
-      tests/Database/DatabaseSeederTest.php;
       vendor/**/tests/**;
       vendor/orchestra/testbench-core/src/Http/Middleware/TrustProxies.php;
       vendor/mockery/mockery/library/Mockery/Mock.php;

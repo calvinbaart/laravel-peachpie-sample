@@ -1,0 +1,14 @@
+--- vendor/jeremeamia/superclosure/src/Analyzer/AstAnalyzer.php	2019-08-15 17:06:22.000000000 +0200
++++ vendor/jeremeamia/superclosure/src/Analyzer/AstAnalyzer.php	2019-08-15 17:06:51.000000000 +0200
+@@ -139,10 +139,6 @@
+      */
+     private function getParser()
+     {
+-        if (class_exists('PhpParser\ParserFactory')) {
+-            return (new ParserFactory)->create(ParserFactory::PREFER_PHP7);
+-        }
+-
+-        return new CodeParser(new EmulativeLexer);
++        return (new ParserFactory)->create(ParserFactory::PREFER_PHP7);
+     }
+ }
