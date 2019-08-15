@@ -1,0 +1,27 @@
+--- vendor/mockery/mockery/library/Mockery/Generator/Method2.php	2019-08-15 19:37:18.000000000 +0200
++++ vendor/mockery/mockery/library/Mockery/Generator/Method.php	2019-08-15 19:37:33.000000000 +0200
+@@ -54,7 +54,14 @@
+         }
+ 
+         if (version_compare(PHP_VERSION, '7.0.0-dev') >= 0 && $this->method->hasReturnType()) {
+-            $returnType = PHP_VERSION_ID >= 70100 ? $this->method->getReturnType()->getName() : (string) $this->method->getReturnType();
++            $obj = new \ReflectionObject($this->method->getReturnType());
++            $value = $obj->getProperty("_type")->getValue($this->method->getReturnType());
++
++            if ($value->FullName === "System.Void") {
++                $returnType = "void";
++            } else {
++                $returnType = PHP_VERSION_ID >= 70100 ? $this->method->getReturnType()->getName() : (string) $this->method->getReturnType();
++            }
+ 
+             if ('self' === $returnType) {
+                 $returnType = "\\".$this->method->getDeclaringClass()->getName();
+@@ -62,7 +69,7 @@
+                 $returnType = '\\'.$returnType;
+             }
+ 
+-            if (version_compare(PHP_VERSION, '7.1.0-dev') >= 0 && $this->method->getReturnType()->allowsNull()) {
++            if (version_compare(PHP_VERSION, '7.1.0-dev') >= 0 && $returnType !== "void" && $this->method->getReturnType()->allowsNull()) {
+                 $returnType = '?'.$returnType;
+             }
+ 
