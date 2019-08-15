@@ -80,33 +80,15 @@ class LoadConfiguration
      * @return array
      */
     protected function getConfigurationFiles(Application $app)
-    { 
-        if (app()->runningInConsole()) {
-            $files = [];
-
-            $configPath = realpath($app->configPath());
-
-            foreach (Finder::create()->files()->name('*.php')->in($configPath) as $file) {
-                $directory = $this->getNestedDirectory($file, $configPath);
-
-                $files[$directory.basename($file->getRealPath(), '.php')] = $file->getRealPath();
-            }
-
-            ksort($files, SORT_NATURAL);
-
-            return $files;
-        }
-        
+    {
         $files = [];
 
         $configPath = realpath($app->configPath());
 
-        $directory = new \RecursiveDirectoryIterator($configPath);
-        $iterator = new \RecursiveIteratorIterator($directory);
-        $iterator = new \RegexIterator($iterator, "/^.+\.php$/i", \RecursiveRegexIterator::GET_MATCH);
+        foreach (Finder::create()->files()->name('*.php')->in($configPath) as $file) {
+            $directory = $this->getNestedDirectory($file, $configPath);
 
-        foreach ($iterator as $file) {
-            $files[basename($file[0], '.php')] = "../config/" . basename($file[0]);
+            $files[$directory.basename($file->getRealPath(), '.php')] = $file->getRealPath();
         }
 
         ksort($files, SORT_NATURAL);

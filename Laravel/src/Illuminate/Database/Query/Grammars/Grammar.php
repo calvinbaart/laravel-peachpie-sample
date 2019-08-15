@@ -733,9 +733,7 @@ class Grammar extends BaseGrammar
     protected function compileOrdersToArray(Builder $query, $orders)
     {
         return array_map(function ($order) {
-            return ! isset($order['sql'])
-                        ? $this->wrap($order['column']).' '.$order['direction']
-                        : $order['sql'];
+            return $order['sql'] ?? $this->wrap($order['column']).' '.$order['direction'];
         }, $orders);
     }
 
@@ -944,7 +942,7 @@ class Grammar extends BaseGrammar
      */
     public function prepareBindingsForUpdate(array $bindings, array $values)
     {
-        $cleanBindings = Arr::except($bindings, ['join', 'select']);
+        $cleanBindings = Arr::except($bindings, ['select', 'join']);
 
         return array_values(
             array_merge($bindings['join'], $values, Arr::flatten($cleanBindings))
@@ -972,7 +970,9 @@ class Grammar extends BaseGrammar
      */
     public function prepareBindingsForDelete(array $bindings)
     {
-        return Arr::flatten($bindings);
+        return Arr::flatten(
+            Arr::except($bindings, 'select')
+        );
     }
 
     /**
@@ -1119,6 +1119,8 @@ class Grammar extends BaseGrammar
      */
     protected function wrapJsonPath($value, $delimiter = '->')
     {
+        $value = preg_replace("/([\\\\]+)?\\'/", "\\'", $value);
+
         return '\'$."'.str_replace($delimiter, '"."', $value).'"\'';
     }
 

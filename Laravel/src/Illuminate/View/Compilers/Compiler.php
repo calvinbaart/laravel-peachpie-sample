@@ -48,11 +48,7 @@ abstract class Compiler
      */
     public function getCompiledPath($path)
     {
-        $basePath = base_path();
-        $relativePath = substr($path, strlen($basePath) + 1);
-        $relativePath = str_replace("\\", "/", $relativePath);
-
-        return $this->cachePath.'/'.sha1($relativePath).'.php';
+        return $this->cachePath.'/'.sha1($path).'.php';
     }
 
     /**
@@ -63,17 +59,16 @@ abstract class Compiler
      */
     public function isExpired($path)
     {
-        return false;
-        // $compiled = $this->getCompiledPath($path);
+        $compiled = $this->getCompiledPath($path);
 
-        // // If the compiled file doesn't exist we will indicate that the view is expired
-        // // so that it can be re-compiled. Else, we will verify the last modification
-        // // of the views is less than the modification times of the compiled views.
-        // if (! $this->files->exists($compiled)) {
-        //     return true;
-        // }
+        // If the compiled file doesn't exist we will indicate that the view is expired
+        // so that it can be re-compiled. Else, we will verify the last modification
+        // of the views is less than the modification times of the compiled views.
+        if (! $this->files->exists($compiled)) {
+            return true;
+        }
 
-        // return $this->files->lastModified($path) >=
-        //        $this->files->lastModified($compiled);
+        return $this->files->lastModified($path) >=
+               $this->files->lastModified($compiled);
     }
 }

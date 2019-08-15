@@ -17,7 +17,7 @@ abstract class ServiceProvider
     /**
      * Indicates if loading of the provider is deferred.
      *
-     * @deprecated Implement the \Illuminate\Contracts\Support\DeferrableProvider interface instead. Will be removed in Laravel 5.9.
+     * @deprecated Implement the \Illuminate\Contracts\Support\DeferrableProvider interface instead. Will be removed in Laravel 6.0.
      *
      * @var bool
      */
@@ -156,10 +156,8 @@ abstract class ServiceProvider
 
         static::$publishes[$class] = array_merge(static::$publishes[$class], $paths);
 
-        if (! is_null($groups)) {
-            foreach ((array) $groups as $group) {
-                $this->addPublishGroup($group, $paths);
-            }
+        foreach ((array) $groups as $group) {
+            $this->addPublishGroup($group, $paths);
         }
     }
 

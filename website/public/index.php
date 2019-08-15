@@ -21,9 +21,6 @@ define('LARAVEL_START', microtime(true));
 |
 */
 
-$dir1 = __DIR__.'/../vendor/laravel_autoload.php';
-$dir2 = __DIR__.'/../vendor/autoload.php';
-
 require __DIR__.'/../vendor/laravel_autoload.php';
 require __DIR__.'/../vendor/autoload.php';
 

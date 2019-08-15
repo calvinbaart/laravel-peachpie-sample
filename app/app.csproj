@@ -4,8 +4,10 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <Import Project="..\build\Settings.props" />
+
   <ItemGroup>
-    <PackageReference Include="Peachpie.AspNetCore.Web" Version="0.9.45" />
+    <PackageReference Include="Peachpie.AspNetCore.Web" Version="$(PeachpieVersion)" />
     <PackageReference Include="Microsoft.AspNetCore.All" />
   </ItemGroup>
 

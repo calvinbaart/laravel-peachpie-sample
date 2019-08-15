@@ -2,8 +2,8 @@
   <PropertyGroup>
     <OutputType>exe</OutputType>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <VersionPrefix>5.8.9</VersionPrefix>
-    <PackageVersion>5.8.9</PackageVersion>
+    <VersionPrefix>$(LaravelVersion)</VersionPrefix>
+    <PackageVersion>$(LaravelVersion)</PackageVersion>
     <NoWarn>PHP0125,PHP5011,PHP5008,PHP5006,PHP5014,PHP5015,PHP5026,PHP5028,PHP5025,PHP5007,PHP5022,PHP5018,PHP5012</NoWarn>
     <DefineConstants>PEACHPIE</DefineConstants>
   </PropertyGroup>
@@ -32,7 +32,7 @@
       main.php;
       tests/**/*.php;
       vendor/**/*.php;
-      src/**/*.php;
+      src/Illuminate/Foundation/Testing/**/*.php;
     " Exclude="
       vendor/**/tests/**;
       vendor/orchestra/testbench-core/src/Http/Middleware/TrustProxies.php;
@@ -40,6 +40,7 @@
       vendor\mockery\mockery\library\Mockery\Adapter\Phpunit\Legacy\TestListenerForV5.php;
       vendor\mockery\mockery\library\Mockery\Adapter\Phpunit\Legacy\TestListenerForV6.php;
       vendor/fzaninotto/faker/test/**;
+      tests/Routing/fixtures/**;
     "/>
   </ItemGroup>
 </Project>

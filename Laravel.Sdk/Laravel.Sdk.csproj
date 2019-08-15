@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <Import Project="..\build\Settings.props" />
+
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
@@ -8,5 +8,4 @@
   <ItemGroup>
     <PackageReference Include="Peachpie.Runtime" Version="$(PeachpieVersion)" />
   </ItemGroup>
-
 </Project>

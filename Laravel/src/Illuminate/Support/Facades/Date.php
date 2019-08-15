@@ -104,15 +104,10 @@ class Date extends Facade
      */
     protected static function resolveFacadeInstance($name)
     {
-        if (! isset(static::$resolvedInstance[$name])) {
-            try {
-                $instance = static::$app[$name];
-            } catch (\Throwable $e) {
-                $class = static::DEFAULT_FACADE;
-                $instance = new $class;
-            }
+        if (! isset(static::$resolvedInstance[$name]) && ! isset(static::$app, static::$app[$name])) {
+            $class = static::DEFAULT_FACADE;
 
-            static::swap($instance);
+            static::swap(new $class);
         }
 
         return parent::resolveFacadeInstance($name);

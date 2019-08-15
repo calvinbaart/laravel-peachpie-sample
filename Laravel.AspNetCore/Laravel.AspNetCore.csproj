@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <Import Project="..\build\Settings.props" />
+
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
@@ -9,7 +9,7 @@
     <ProjectReference Include="../Laravel/Laravel.msbuildproj">
       <PrivateAssets>None</PrivateAssets>
     </ProjectReference>
-    
+
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Rewrite" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.1.1" />
@@ -20,5 +20,4 @@
     <PackageReference Include="Peachpie.AspNetCore.Web" Version="$(PeachpieVersion)" />
     <PackageReference Include="Peachpie.Compiler.Diagnostics" Version="1.0.1" />
   </ItemGroup>
-
 </Project>
