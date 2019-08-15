@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
+using System.IO;
 using Laravel.AspNetCore;
 using Laravel.Sdk;
 using App.Http.Controllers;
@@ -17,6 +18,7 @@ namespace peachserver
                 .UseKestrel()
                 .UseUrls("http://*:5004/")
                 .UseStartup<Startup>()
+                .UseContentRoot(Directory.GetCurrentDirectory())
                 .ConfigureLogging(logging =>
                 {
                     logging.ClearProviders();

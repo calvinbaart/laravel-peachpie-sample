@@ -1,4 +1,4 @@
-<Project Sdk="Peachpie.NET.Sdk/0.9.9-dev">
+<Project Sdk="Peachpie.NET.Sdk/0.9.45">
   <PropertyGroup>
     <OutputType>exe</OutputType>
     <TargetFramework>netcoreapp2.1</TargetFramework>
@@ -7,7 +7,7 @@
     <NoWarn>PHP0125,PHP5011,PHP5008,PHP5006,PHP5014,PHP5015,PHP5026,PHP5028,PHP5025,PHP5007,PHP5022,PHP5018,PHP5012</NoWarn>
     <DefineConstants>PEACHPIE</DefineConstants>
   </PropertyGroup>
-  
+
   <ItemGroup>
     <ProjectReference Include="..\Laravel.Sdk\Laravel.Sdk.csproj" />
     <ProjectReference Include="..\Laravel\Laravel.msbuildproj" />
@@ -18,11 +18,12 @@
       <Tests Include="$(ProjectDir)tests/**" Exclude="$(ProjectDir)tests/Database/stubs/**"/>
     </ItemGroup>
 
-    <Copy SourceFiles="$(ProjectDir)../Laravel/vendor/laravel_autoload.php" DestinationFolder="$(TargetDir)/vendor" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
+    <Copy SourceFiles="$(ProjectDir)../Laravel/vendor/laravel_autoload.php" DestinationFiles="$(TargetDir)/vendor/laravel_autoload.php" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
     <Copy SourceFiles="$(ProjectDir)vendor/autoload.php" DestinationFolder="$(TargetDir)/vendor" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
     <Copy SourceFiles="$(ProjectDir)phpunit.xml" DestinationFolder="$(TargetDir)" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
     <Copy SourceFiles="@(Tests)" DestinationFolder="$(TargetDir)\tests\%(RecursiveDir)" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
     <Copy SourceFiles="$(ProjectDir)vendor/mockery/mockery/library/Mockery/Mock.php" DestinationFolder="$(TargetDir)/vendor/mockery/mockery/library/Mockery" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
+
     <MakeDir Directories="$(TargetDir)\vendor" />
   </Target>
 
@@ -33,13 +34,13 @@
       vendor/**/*.php;
       src/**/*.php;
     " Exclude="
-      tests/Database/**/*.php;
+      tests/Database/DatabaseSeederTest.php;
       vendor/**/tests/**;
+      vendor/orchestra/testbench-core/src/Http/Middleware/TrustProxies.php;
       vendor/mockery/mockery/library/Mockery/Mock.php;
       vendor\mockery\mockery\library\Mockery\Adapter\Phpunit\Legacy\TestListenerForV5.php;
       vendor\mockery\mockery\library\Mockery\Adapter\Phpunit\Legacy\TestListenerForV6.php;
       vendor/fzaninotto/faker/test/**;
-      vendor/myclabs/**;
     "/>
   </ItemGroup>
 </Project>

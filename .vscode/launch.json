@@ -10,6 +10,7 @@
             "args": [],
             "cwd": "${workspaceRoot}/app/bin/Debug/netcoreapp2.1",
             "stopAtEntry": false,
+            "justMyCode": false,
             "externalConsole": false
         },
         {
@@ -21,6 +22,7 @@
             "args": [],
             "cwd": "${workspaceRoot}/app/bin/Debug/netcoreapp2.1",
             "stopAtEntry": false,
+            "justMyCode": false,
             "launchBrowser": {
                 "enabled": true,
                 "args": "${auto-detect-url}",
@@ -47,7 +49,7 @@
             "name": ".NET Core Attach",
             "type": "coreclr",
             "request": "attach",
-            "processId": "${command.pickProcess}"
+            "processId": "${command:pickProcess}"
         }
     ]
 }

@@ -5,8 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Peachpie.AspNetCore.Web" Version="0.9.9-dev" />
-    <PackageReference Include="Peachpie.Library.PDO.MySql" Version="0.9.9-dev" />
+    <PackageReference Include="Peachpie.AspNetCore.Web" Version="0.9.45" />
     <PackageReference Include="Microsoft.AspNetCore.All" />
   </ItemGroup>
 
@@ -18,7 +17,7 @@
     <ProjectReference Include="../Laravel/Laravel.msbuildproj">
       <PrivateAssets>None</PrivateAssets>
     </ProjectReference>
-    
+
     <ProjectReference Include="../website/website.msbuildproj">
       <PrivateAssets>None</PrivateAssets>
     </ProjectReference>

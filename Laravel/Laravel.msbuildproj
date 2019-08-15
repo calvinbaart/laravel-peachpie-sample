@@ -1,21 +1,22 @@
-﻿<Project Sdk="Peachpie.NET.Sdk/0.9.9-dev">
+﻿<Project Sdk="Peachpie.NET.Sdk/0.9.45">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <VersionPrefix>5.8.9</VersionPrefix>
     <PackageVersion>5.8.9</PackageVersion>
-    <NoWarn>PHP0125,PHP5011,PHP5008,PHP5006</NoWarn>
+    <NoWarn>PHP0125,PHP5011,PHP5008,PHP5006,PHP5012</NoWarn>
     <Copyright>Laravel</Copyright>
     <Description>Laravel project transformed to managed .NET Standard library.</Description>
     <DefineConstants>PEACHPIE</DefineConstants>
   </PropertyGroup>
-  
+
   <ItemGroup>
     <ProjectReference Include="..\Laravel.Sdk\Laravel.Sdk.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Compile Include="
-      dummy.php;
+      dummy_files/dummy_openssl.php;
+      dummy_files/dummy_browserkit.php;
       vendor/**/*.php;
       src/**/*.php;
     " Exclude="
@@ -29,12 +30,16 @@
         vendor/phpunit/**;
         vendor/mockery/**;
         vendor/bin/**;
+        vendor/aws/**;
+        vendor/symfony/cache/**;
         vendor/symfony/polyfill-util/LegacyTestListener.php;
         vendor/symfony/polyfill-util/TestListenerForV5.php;
         vendor/symfony/polyfill-util/TestListenerForV6.php;
         vendor/symfony/polyfill-util/TestListenerForV7.php;
         vendor/symfony/polyfill-util/TestListener.php;
+        vendor/symfony/http-kernel/Controller/ArgumentResolver/ServiceValueResolver.php;
         vendor/calvinbaart/laravel-peachpie/src/Illuminate/Cache/ApcWrapper.php;
       "/>
+      <PackageReference Include="Peachpie.Library.PDO.MySql" Version="$(PeachpieVersion)" />
   </ItemGroup>
 </Project>

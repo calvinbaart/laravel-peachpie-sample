@@ -1,14 +1,14 @@
-<Project Sdk="Peachpie.NET.Sdk/0.9.9-dev">
+<Project Sdk="Peachpie.NET.Sdk/0.9.45">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <VersionPrefix>5.8.9</VersionPrefix>
     <PackageVersion>5.8.9</PackageVersion>
-    <NoWarn>PHP0125,PHP5011,PHP5008,PHP5006</NoWarn>
+    <NoWarn>PHP0125,PHP5011,PHP5008,PHP5006,PHP5012</NoWarn>
     <Copyright>Laravel</Copyright>
     <Description>Laravel project transformed to managed .NET Standard library.</Description>
     <DefineConstants>PEACHPIE</DefineConstants>
   </PropertyGroup>
-  
+
   <ItemGroup>
     <ProjectReference Include="..\Laravel.Sdk\Laravel.Sdk.csproj" />
     <ProjectReference Include="..\Laravel\Laravel.msbuildproj" />
@@ -38,5 +38,6 @@
         vendor/symfony/polyfill-util/TestListener.php;
         vendor/calvinbaart/laravel-peachpie/src/Illuminate/Cache/ApcWrapper.php;
       "/>
+      <PackageReference Include="Peachpie.Library.PDO.MySql" Version="$(PeachpieVersion)" />
   </ItemGroup>
 </Project>
