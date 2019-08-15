@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace peachserver
 {
@@ -21,6 +22,7 @@ namespace peachserver
                 .UseKestrel()
                 .UseUrls("http://*:5004/")
                 .UseStartup<Startup>()
+                .UseContentRoot(Directory.GetCurrentDirectory())
                 .ConfigureLogging(logging =>
                 {
                     logging.ClearProviders();
