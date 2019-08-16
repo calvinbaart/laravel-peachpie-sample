@@ -31,6 +31,7 @@
       <Routes Include="$(ProjectDir)../website/routes/**" />
       <Resources Include="$(ProjectDir)../website/resources/**" />
       <Public Include="$(ProjectDir)../website/public/**" />
+      <Vendor Include="$(ProjectDir)../website/vendor/**" />
       <ViewCache Include="$(ProjectDir)../website/storage/framework/views/**" />
     </ItemGroup>
 
@@ -44,6 +45,8 @@
 
     <Copy SourceFiles="@(Public)" DestinationFolder="$(TargetDir)\public\%(RecursiveDir)" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
 
+    <Copy SourceFiles="@(Vendor)" DestinationFolder="$(TargetDir)\vendor\%(RecursiveDir)" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
+
     <MakeDir Directories="$(TargetDir)\storage" />
     <MakeDir Directories="$(TargetDir)\storage\app" />
     <MakeDir Directories="$(TargetDir)\storage\framework" />
@@ -52,6 +55,9 @@
     <MakeDir Directories="$(TargetDir)\storage\framework\testing" />
     <MakeDir Directories="$(TargetDir)\storage\framework\views" />
     <MakeDir Directories="$(TargetDir)\storage\logs" />
+
+    <MakeDir Directories="$(TargetDir)\bootstrap" />
+    <MakeDir Directories="$(TargetDir)\bootstrap\cache" />
 
     <Copy SourceFiles="@(ViewCache)" DestinationFolder="$(TargetDir)\storage\framework\views\%(RecursiveDir)" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
   </Target>

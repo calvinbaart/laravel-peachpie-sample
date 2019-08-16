@@ -52,6 +52,7 @@ namespace peachserver
 
             LaravelLoader.AppStarted += (laravelApp) =>
             {
+                System.Console.WriteLine("AppStarted, declaring types");
                 laravelApp.Context.DeclareType<TestController>();
             };
         }

@@ -1,0 +1,20 @@
+--- src/Illuminate/Encryption/Encrypter.php	2019-08-15 23:52:54.000000000 +0200
++++ src/Illuminate/Encryption/Encrypter.php	2019-08-16 11:57:37.000000000 +0200
+@@ -81,7 +81,7 @@
+      */
+     public function encrypt($value, $serialize = true)
+     {
+-        $iv = random_bytes(openssl_cipher_iv_length($this->cipher));
++        $iv = random_bytes(\openssl_cipher_iv_length($this->cipher));
+
+         // First we will encrypt the value using OpenSSL. After this is encrypted we
+         // will proceed to calculating a MAC for the encrypted value so that this
+@@ -211,7 +211,7 @@
+     protected function validPayload($payload)
+     {
+         return is_array($payload) && isset($payload['iv'], $payload['value'], $payload['mac']) &&
+-               strlen(base64_decode($payload['iv'], true)) === openssl_cipher_iv_length($this->cipher);
++               strlen(base64_decode($payload['iv'], true)) === \openssl_cipher_iv_length($this->cipher);
+     }
+
+     /**

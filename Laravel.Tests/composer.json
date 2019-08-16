@@ -1,13 +1,16 @@
 {
     "name": "Laravel.Tests",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../Laravel.ComposerDummy"
+        }
+    ],
     "require": {
+        "calvinbaart/laravel-sdk": "*",
         "phpunit/phpunit": "^8.1",
         "mockery/mockery": "^1.2",
         "orchestra/testbench": "^3.8"
-    },
-    "replace": {
-        "laravel/framework": "*",
-        "nesbot/carbon": "*"
     },
     "scripts": {
         "pre-autoload-dump": [
@@ -18,5 +21,7 @@
         "post-autoload-dump": [
             "find patches -type f -name '*.patch' -print0 | sort -z | xargs -t -0 -n 1 patch -p0 -i"
         ]
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

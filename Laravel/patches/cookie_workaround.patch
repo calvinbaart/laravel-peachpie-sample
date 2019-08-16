@@ -1,0 +1,11 @@
+--- vendor/symfony/http-foundation/Cookie.php	2019-08-16 12:01:23.000000000 +0200
++++ vendor/symfony/http-foundation/Cookie.php	2019-08-16 12:01:35.000000000 +0200
+@@ -124,7 +124,7 @@
+         if ('' === $sameSite) {
+             $sameSite = null;
+         } elseif (null !== $sameSite) {
+-            $sameSite = strtolower($sameSite);
++            $sameSite = strtolower($sameSite ?? self::SAMESITE_NONE);
+         }
+
+         if (!\in_array($sameSite, [self::SAMESITE_LAX, self::SAMESITE_STRICT, self::SAMESITE_NONE, null], true)) {

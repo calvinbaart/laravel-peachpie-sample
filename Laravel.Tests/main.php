@@ -9,22 +9,31 @@
 * file that was distributed with this source code.
 */
 
-require_once(__DIR__ . "/vendor/laravel_autoload.php");
-require_once(__DIR__ . "/vendor/autoload.php");
+// require_once(__DIR__ . "/vendor/laravel_autoload.php");
+// require_once(__DIR__ . "/vendor/autoload.php");
 
-function main()
+// function main()
+// {
+//     if (!ini_get('date.timezone')) {
+//         ini_set('date.timezone', 'UTC');
+//     }
+
+//     $options = getopt('', array('prepend:'));
+//     if (isset($options['prepend'])) {
+//         require $options['prepend'];
+//     }
+//     unset($options);
+
+//     PHPUnit\TextUI\Command::main();
+// }
+
+// main();
+
+class TestIteratorAggregate implements \IteratorAggregate
 {
-    if (!ini_get('date.timezone')) {
-        ini_set('date.timezone', 'UTC');
+    public function getIterator() {
+        return new \ArrayIterator($this);
     }
-
-    $options = getopt('', array('prepend:'));
-    if (isset($options['prepend'])) {
-        require $options['prepend'];
-    }
-    unset($options);
-
-    PHPUnit\TextUI\Command::main();
 }
 
-main();
+$tmp = iterator_to_array(new TestIteratorAggregate());

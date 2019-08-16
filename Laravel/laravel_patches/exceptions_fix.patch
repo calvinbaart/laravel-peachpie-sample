@@ -1,0 +1,21 @@
+--- src/Illuminate/Foundation/Bootstrap/HandleExceptions.php	2019-08-15 22:42:07.000000000 +0200
++++ src/Illuminate/Foundation/Bootstrap/HandleExceptions.php	2019-08-15 23:19:54.000000000 +0200
+@@ -2,6 +2,7 @@
+
+ namespace Illuminate\Foundation\Bootstrap;
+
++use Throwable;
+ use Exception;
+ use ErrorException;
+ use Illuminate\Contracts\Debug\ExceptionHandler;
+@@ -83,6 +84,10 @@
+     public function handleException($e)
+     {
+         if (! $e instanceof Exception) {
++            if (! $e instanceof Throwable) {
++                $e = new Exception($e->ToString());
++            }
++
+             $e = new FatalThrowableError($e);
+         }
+

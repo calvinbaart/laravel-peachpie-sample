@@ -14,6 +14,10 @@
     <ProjectReference Include="..\Laravel\Laravel.msbuildproj" />
   </ItemGroup>
 
+  <Target Name="CopyLinkedContentFiles" BeforeTargets="Build">
+    <MakeDir Directories="$(OutDir)\vendor" />
+  </Target>
+
   <ItemGroup>
     <Compile Include="
       dummy.php;
@@ -31,6 +35,9 @@
         **/Mockery/**;
         **/Mock/**;
         **/spec/**;
+        vendor/nunomaduro/**;
+        vendor/phpunit/**;
+        vendor/psr/**;
         vendor/symfony/polyfill-util/LegacyTestListener.php;
         vendor/symfony/polyfill-util/TestListenerForV5.php;
         vendor/symfony/polyfill-util/TestListenerForV6.php;
@@ -38,6 +45,7 @@
         vendor/symfony/polyfill-util/TestListener.php;
         vendor/calvinbaart/laravel-peachpie/src/Illuminate/Cache/ApcWrapper.php;
       "/>
+
       <PackageReference Include="Peachpie.Library.PDO.MySql" Version="$(PeachpieVersion)" />
   </ItemGroup>
 </Project>

@@ -5,14 +5,9 @@ using Illuminate.View;
 namespace App.Http.Controllers
 {
     [PhpType]
-    public class TestController : Controller
+    public class TestController : BaseControllerNet
     {
-        private Context _ctx;
-
-        public TestController(Context ctx) : base(ctx)
-        {
-            this._ctx = ctx;
-        }
+        public TestController(Context ctx) : base(ctx) {}
 
         public View index()
         {
