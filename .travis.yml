@@ -11,6 +11,7 @@ install:
   - dotnet msbuild /t:restore "./Peachpie.sln" /v:m /p:Version=0.9.9-dev,Configuration=Release
   - dotnet restore "./src/Peachpie.NET.Sdk" /v:m /p:Version=0.9.9-dev,Configuration=Release
   - dotnet msbuild /t:build "./Peachpie.sln" /v:m /p:Version=0.9.9-dev,Configuration=Release || true
+  - dotnet build ./src/Peachpie.Library.Scripting/ /p:TargetFrameworks=netstandard2.0
   - cd .nugs
   - rm -rf ~/.nuget/NuGet/NuGet.Config
   - sed "s~PEACHPIE~`pwd`~g" ../../../build/nuget.config > ~/.nuget/NuGet/NuGet.Config
