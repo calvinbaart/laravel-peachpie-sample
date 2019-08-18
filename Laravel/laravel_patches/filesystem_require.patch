@@ -1,0 +1,20 @@
+--- src/Illuminate/Filesystem/Filesystem.php	2019-08-18 17:45:16.000000000 +0200
++++ src/Illuminate/Filesystem/Filesystem2.php	2019-08-18 17:49:47.000000000 +0200
+@@ -81,7 +81,7 @@
+     public function getRequire($path)
+     {
+         if ($this->isFile($path)) {
+-            return require $path;
++            return eval("?>" . file_get_contents($path));
+         }
+ 
+         throw new FileNotFoundException("File does not exist at path {$path}");
+@@ -95,7 +95,7 @@
+      */
+     public function requireOnce($file)
+     {
+-        require_once $file;
++        eval("?>" . file_get_contents($file));
+     }
+ 
+     /**
