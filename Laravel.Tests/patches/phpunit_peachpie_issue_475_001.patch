@@ -1,0 +1,15 @@
+--- vendor/phpunit/phpunit/src/Util/RegularExpression.php	2019-08-17 20:37:21.000000000 +0200
++++ vendor/phpunit/phpunit/src/Util/RegularExpression.php	2019-08-17 20:37:17.000000000 +0200
+@@ -21,7 +21,11 @@
+     {
+         return ErrorHandler::invokeIgnoringWarnings(
+             static function () use ($pattern, $subject, $matches, $flags, $offset) {
+-                return \preg_match($pattern, $subject, $matches, $flags, $offset);
++                try {
++                    return \preg_match($pattern, $subject, $matches, $flags, $offset);
++                } catch (\System\Exception $e) {
++                    return false;
++                }
+             }
+         );
+     }

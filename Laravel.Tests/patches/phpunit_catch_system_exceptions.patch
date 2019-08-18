@@ -1,0 +1,132 @@
+--- vendor/phpunit/phpunit/src/Framework/TestCase.php	2019-08-11 08:56:55.000000000 +0200
++++ vendor/phpunit/phpunit/src/Framework/TestCase.php	2019-08-17 20:31:41.000000000 +0200
+@@ -50,6 +50,49 @@
+ use SebastianBergmann\GlobalState\Snapshot;
+ use SebastianBergmann\ObjectEnumerator\Enumerator;
+ 
++class WrappedException extends \Exception
++{
++    /** @var \System\Exception */
++    private $_exception;
++
++    public function __construct(\System\Exception $exception)
++    {
++        parent::__construct();
++
++        $this->_exception = $exception;
++    }
++
++    public function getMessage(): string
++    {
++        return $this->_exception->ToString(); // return $this->_exception->Message;
++    }
++
++    public function getCode(): int
++    {
++        return -1;
++    }
++
++    public function getFile(): string
++    {
++        return ""; // $this->_exception->Source;
++    }
++
++    public function getLine(): int
++    {
++        return -1;
++    }
++
++    public function getTrace(): array
++    {
++        return []; // [$this->_exception->TargetSite, $this->_exception->StackTrace];
++    }
++
++    public function getTraceAsString(): string
++    {
++        return ""; // $this->_exception->StackTrace;
++    }
++}
++
+ abstract class TestCase extends Assert implements SelfDescribing, Test
+ {
+     private const LOCALE_CATEGORIES = [\LC_ALL, \LC_COLLATE, \LC_CTYPE, \LC_MONETARY, \LC_NUMERIC, \LC_TIME];
+@@ -977,6 +1020,10 @@
+             $e                   = $_e;
+             $this->status        = BaseTestRunner::STATUS_ERROR;
+             $this->statusMessage = $_e->getMessage();
++        } catch (\System\Exception $exception) {
++            $e                   = new WrappedException($exception);
++            $this->status        = BaseTestRunner::STATUS_ERROR;
++            $this->statusMessage = $e->getMessage();
+         }
+ 
+         $this->mockObjects = [];
+@@ -998,6 +1045,8 @@
+             }
+         } catch (\Throwable $_e) {
+             $e = $e ?? $_e;
++        } catch (\System\Exception $exception) {
++            $e = $e ?? new WrappedException($exception);
+         }
+ 
+         try {
+@@ -1033,6 +1082,8 @@
+                 }
+             } catch (\Throwable $_e) {
+                 $e = $_e;
++            } catch (\System\Exception $exception) {
++                $e = new WrappedException($exception);
+             }
+         }
+ 
+@@ -1367,6 +1418,50 @@
+             }
+ 
+             return;
++        } catch (\System\Exception $systemException) {
++            $exception = new WrappedException($systemException);
++
++            if (!$this->checkExceptionExpectations($exception)) {
++                throw $exception;
++            }
++
++            if ($this->expectedException !== null) {
++                $this->assertThat(
++                    $exception,
++                    new ExceptionConstraint(
++                        $this->expectedException
++                    )
++                );
++            }
++
++            if ($this->expectedExceptionMessage !== null) {
++                $this->assertThat(
++                    $exception,
++                    new ExceptionMessage(
++                        $this->expectedExceptionMessage
++                    )
++                );
++            }
++
++            if ($this->expectedExceptionMessageRegExp !== null) {
++                $this->assertThat(
++                    $exception,
++                    new ExceptionMessageRegularExpression(
++                        $this->expectedExceptionMessageRegExp
++                    )
++                );
++            }
++
++            if ($this->expectedExceptionCode !== null) {
++                $this->assertThat(
++                    $exception,
++                    new ExceptionCode(
++                        $this->expectedExceptionCode
++                    )
++                );
++            }
++
++            return;
+         }
+ 
+         if ($this->expectedException !== null) {

@@ -12,7 +12,7 @@
       * Create a new Illuminate application instance.
       *
       * @param  string|null  $basePath
-@@ -151,6 +156,26 @@
+@@ -151,6 +156,29 @@
          $this->registerBaseBindings();
          $this->registerBaseServiceProviders();
          $this->registerCoreContainerAliases();
@@ -35,7 +35,10 @@
 +        };
 +
 +        global $peachpie_laravel_loader;
-+        $peachpie_laravel_loader->InternalAppStarted($this->laravelApp);
++
++        if ($peachpie_laravel_loader) {
++            $peachpie_laravel_loader->InternalAppStarted($this->laravelApp);
++        }
      }
 
      /**

@@ -15,4 +15,5 @@ Laravel.AspNetCore/obj
 Laravel.Tests/bin
 Laravel.Tests/obj
 Laravel.Tests/vendor
+Laravel.Tests/.phpunit.result.cache
 .vs

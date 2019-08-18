@@ -1,4 +1,4 @@
-<Project Sdk="Peachpie.NET.Sdk/0.9.45">
+<Project Sdk="Peachpie.NET.Sdk/0.9.9-dev">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <VersionPrefix>$(LaravelVersion)</VersionPrefix>

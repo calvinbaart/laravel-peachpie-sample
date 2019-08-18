@@ -1,0 +1,34 @@
+sudo: required
+dist: xenial
+language: php
+php:
+  - '7.3'
+
+install:
+  - ./build/install_dependencies_ubuntu16.sh
+  - git clone https://github.com/peachpiecompiler/peachpie.git third-party/peachpie
+  - cd ./third-party/peachpie
+  - dotnet msbuild /t:restore "./Peachpie.sln" /v:m /p:Version=0.9.9-dev,Configuration=Release
+  - dotnet restore "./src/Peachpie.NET.Sdk" /v:m /p:Version=0.9.9-dev,Configuration=Release
+  - dotnet msbuild /t:build "./Peachpie.sln" /v:m /p:Version=0.9.9-dev,Configuration=Release || true
+  - cd .nugs
+  - rm -rf ~/.nuget/NuGet/NuGet.Config
+  - sed "s~PEACHPIE~`pwd`~g" ../../../build/nuget.config > ~/.nuget/NuGet/NuGet.Config
+  - nuget sources -configfile ~/.nuget/NuGet/NuGet.Config
+  - cd ../../../
+  - dotnet nuget locals all --clear
+  - dotnet restore ./Laravel/Laravel.msbuildproj
+  - dotnet restore ./Laravel.Sdk/Laravel.Sdk.csproj
+  - dotnet restore ./Laravel.Tests/Laravel.Tests.msbuildproj
+  - cd ./Laravel
+  - composer install
+  - cd ../Laravel.Tests
+  - composer install
+  - cd ../
+  - dotnet build ./Laravel.Sdk/
+  - dotnet build ./Laravel/
+  - dotnet build ./Laravel.Tests/
+
+script:
+  - cd Laravel.Tests
+  - dotnet run

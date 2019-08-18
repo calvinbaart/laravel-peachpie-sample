@@ -1,0 +1,18 @@
+--- vendor/phpunit/phpunit/src/Framework/MockObject/MockMethod.php	2019-08-11 08:56:55.000000000 +0200
++++ vendor/phpunit/phpunit/src/Framework/MockObject/MockMethod2.php	2019-08-17 22:32:14.000000000 +0200
+@@ -249,14 +249,7 @@
+         $parameters = [];
+ 
+         foreach ($method->getParameters() as $i => $parameter) {
+-            $name = '$' . $parameter->getName();
+-
+-            /* Note: PHP extensions may use empty names for reference arguments
+-             * or "..." for methods taking a variable number of arguments.
+-             */
+-            if ($name === '$' || $name === '$...') {
+-                $name = '$arg' . $i;
+-            }
++            $name = '$arg' . $i;
+ 
+             if ($parameter->isVariadic()) {
+                 if ($forCall) {

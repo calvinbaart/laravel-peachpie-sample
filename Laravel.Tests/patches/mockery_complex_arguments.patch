@@ -1,0 +1,14 @@
+--- vendor/mockery/mockery/library/Mockery/Generator/Parameter.php	2019-08-07 17:01:07.000000000 +0200
++++ vendor/mockery/mockery/library/Mockery/Generator/Parameter.php	2019-08-17 22:24:32.000000000 +0200
+@@ -91,10 +91,7 @@
+      */
+     public function getName()
+     {
+-        $name = $this->rfp->getName();
+-        if (!$name || $name == '...') {
+-            $name = 'arg' . static::$parameterCounter++;
+-        }
++        $name = 'arg' . static::$parameterCounter++;
+ 
+         return $name;
+     }

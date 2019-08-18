@@ -12,8 +12,17 @@
         "mockery/mockery": "^1.2",
         "orchestra/testbench": "^3.8"
     },
+    "autoload": {
+        "psr-4": {
+            "Illuminate\\Foundation\\Testing\\": "src/Illuminate/Foundation/Testing",
+            "Illuminate\\Support\\Testing\\": "src/Illuminate/Support/Testing",
+            "Illuminate\\Http\\Testing\\": "src/Illuminate/Http/Testing"
+        }
+    },
     "scripts": {
         "pre-autoload-dump": [
+            "rm -rf tests",
+            "rm -rf src",
             "cp -rf ../third-party/framework/tests .",
             "cp -rf ../third-party/framework/src src",
             "rm -rf tests/Database/DatabaseSeederTest.php"

@@ -1,0 +1,25 @@
+--- vendor/phpunit/phpunit/src/Util/Filter.php	2019-08-17 18:45:15.000000000 +0200
++++ vendor/phpunit/phpunit/src/Util/Filter.php	2019-08-17 18:45:36.000000000 +0200
+@@ -33,11 +33,11 @@
+ 
+         if ($t instanceof SyntheticError) {
+             $eTrace = $t->getSyntheticTrace();
+-            $eFile  = $t->getSyntheticFile();
++            $eFile  = $t->getSyntheticFile() ?? "__unknown";
+             $eLine  = $t->getSyntheticLine();
+         } elseif ($t instanceof Exception) {
+             $eTrace = $t->getSerializableTrace();
+-            $eFile  = $t->getFile();
++            $eFile  = $t->getFile() ?? "__unknown";
+             $eLine  = $t->getLine();
+         } else {
+             if ($t->getPrevious()) {
+@@ -45,7 +45,7 @@
+             }
+ 
+             $eTrace = $t->getTrace();
+-            $eFile  = $t->getFile();
++            $eFile  = $t->getFile() ?? "__unknown";
+             $eLine  = $t->getLine();
+         }
+ 
