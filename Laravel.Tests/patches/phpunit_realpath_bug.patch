@@ -1,0 +1,14 @@
+--- vendor/phpunit/php-file-iterator/src/Factory.php	2019-08-18 22:15:34.000000000 +0200
++++ vendor/phpunit/php-file-iterator/src/Factory2.php	2019-08-18 22:16:14.000000000 +0200
+@@ -72,9 +72,9 @@
+ 
+         foreach ($paths as $path) {
+             if ($locals = \glob($path, GLOB_ONLYDIR)) {
+-                $_paths = \array_merge($_paths, \array_map('\realpath', $locals));
++                $_paths = \array_merge($_paths, $locals);
+             } else {
+-                $_paths[] = \realpath($path);
++                $_paths[] = $path;
+             }
+         }
+ 

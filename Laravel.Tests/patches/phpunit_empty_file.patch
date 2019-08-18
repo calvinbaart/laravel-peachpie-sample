@@ -1,0 +1,13 @@
+--- vendor/phpunit/php-file-iterator/src/Facade.php	2019-08-18 22:13:29.000000000 +0200
++++ vendor/phpunit/php-file-iterator/src/Facade2.php	2019-08-18 22:14:38.000000000 +0200
+@@ -34,6 +34,10 @@
+         $files = [];
+ 
+         foreach ($iterator as $file) {
++            if (empty($file)) {
++                continue;
++            }
++
+             $file = $file->getRealPath();
+ 
+             if ($file) {
