@@ -1,0 +1,12 @@
+--- src/Illuminate/Http/Request.php	2019-08-19 15:12:22.000000000 +0200
++++ src/Illuminate/Http/Request2.php	2019-08-19 15:14:26.000000000 +0200
+@@ -698,4 +698,9 @@
+             return $this->route($key);
+         });
+     }
++
++    public static function create($uri, $method = 'GET', $parameters = [], $cookies = [], $files = [], $server = [], $content = null)
++    {
++        return static::createFromBase(parent::create($uri, $method, $parameters, $cookies, $files, $server, $content));
++    }
+ }

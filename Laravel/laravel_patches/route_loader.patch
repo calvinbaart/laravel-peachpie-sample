@@ -1,0 +1,10 @@
+--- src/Illuminate/Routing/RouteFileRegistrar.php	2019-08-19 09:35:19.000000000 +0200
++++ src/Illuminate/Routing/RouteFileRegistrar2.php	2019-08-19 09:35:42.000000000 +0200
+@@ -32,6 +32,6 @@
+     {
+         $router = $this->router;
+ 
+-        require $routes;
++        eval("?>" . file_get_contents($routes));
+     }
+ }
