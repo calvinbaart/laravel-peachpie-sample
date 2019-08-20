@@ -1,0 +1,13 @@
+--- src/Illuminate/Support/Collection.php	2019-08-20 10:12:21.000000000 +0200
++++ src/Illuminate/Support/Collection2.php	2019-08-20 10:12:03.000000000 +0200
+@@ -1178,7 +1178,9 @@
+     {
+         $groups = $this->mapToDictionary($callback);
+ 
+-        return $groups->map([$this, 'make']);
++        return $groups->map(function ($item) {
++            return static::make($item);
++        });
+     }
+ 
+     /**

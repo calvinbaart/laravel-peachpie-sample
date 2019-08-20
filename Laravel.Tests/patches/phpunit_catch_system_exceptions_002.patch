@@ -1,0 +1,44 @@
+--- vendor/phpunit/phpunit/src/Framework/TestSuite.php	2019-08-19 23:00:32.000000000 +0200
++++ vendor/phpunit/phpunit/src/Framework/TestSuite2.php	2019-08-19 23:01:26.000000000 +0200
+@@ -551,6 +551,22 @@
+             $result->endTestSuite($this);
+ 
+             return $result;
++        } catch (\System\Exception $ex) {
++            $t = new WrappedException($ex);
++
++            foreach ($this->tests() as $test) {
++                if ($result->shouldStop()) {
++                    break;
++                }
++
++                $result->startTest($test);
++                $result->addError($test, $t, 0);
++                $result->endTest($test, 0);
++            }
++
++            $result->endTestSuite($this);
++
++            return $result;
+         }
+ 
+         foreach ($this as $test) {
+@@ -586,6 +602,18 @@
+             $result->startTest($placeholderTest);
+             $result->addFailure($placeholderTest, $error, 0);
+             $result->endTest($placeholderTest, 0);
++        } catch (\System\Exception $ex) {
++            $t = new WrappedException($ex);
++
++            $message = "Exception in {$this->name}::$afterClassMethod" . \PHP_EOL . $t->getMessage();
++            $error   = new SyntheticError($message, 0, $t->getFile(), $t->getLine(), $t->getTrace());
++
++            $placeholderTest = clone $test;
++            $placeholderTest->setName($afterClassMethod);
++
++            $result->startTest($placeholderTest);
++            $result->addFailure($placeholderTest, $error, 0);
++            $result->endTest($placeholderTest, 0);
+         }
+ 
+         $result->endTestSuite($this);

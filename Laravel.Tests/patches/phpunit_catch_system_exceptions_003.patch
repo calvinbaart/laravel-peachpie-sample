@@ -1,0 +1,19 @@
+--- vendor/phpunit/phpunit/src/Framework/TestBuilder.php	2019-08-11 08:56:55.000000000 +0200
++++ vendor/phpunit/phpunit/src/Framework/TestBuilder2.php	2019-08-19 23:02:55.000000000 +0200
+@@ -88,6 +88,16 @@
+                 );
+                 $message = $this->appendExceptionMessageIfAvailable($t, $message);
+                 $data    = new WarningTestCase($message);
++            } catch (\System\Exception $ex) {
++                $t = new WrappedException($ex);
++
++                $message = \sprintf(
++                    'The data provider specified for %s::%s is invalid.',
++                    $className,
++                    $methodName
++                );
++                $message = $this->appendExceptionMessageIfAvailable($t, $message);
++                $data    = new WarningTestCase($message);
+             }
+ 
+             // Test method with @dataProvider.

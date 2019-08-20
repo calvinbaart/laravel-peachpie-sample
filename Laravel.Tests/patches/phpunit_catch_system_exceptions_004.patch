@@ -1,0 +1,11 @@
+--- vendor/phpunit/phpunit/src/Framework/TestCase.php	2019-08-19 22:54:20.000000000 +0200
++++ vendor/phpunit/phpunit/src/Framework/TestCase2.php	2019-08-19 23:04:31.000000000 +0200
+@@ -1965,7 +1965,7 @@
+         if ($this->prophet !== null) {
+             try {
+                 $this->prophet->checkPredictions();
+-            } catch (\Throwable $t) {
++            } catch (\System\Exception $t) {
+                 /* Intentionally left empty */
+             }
+ 

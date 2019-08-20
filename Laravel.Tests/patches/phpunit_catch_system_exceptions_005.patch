@@ -1,0 +1,11 @@
+--- vendor/phpunit/phpunit/src/Util/Type.php	2019-08-11 08:56:55.000000000 +0200
++++ vendor/phpunit/phpunit/src/Util/Type2.php	2019-08-19 23:05:52.000000000 +0200
+@@ -41,7 +41,7 @@
+     {
+         try {
+             $clone = clone $object;
+-        } catch (\Throwable $t) {
++        } catch (\System\Exception $t) {
+             return false;
+         }
+ 

@@ -1,0 +1,38 @@
+--- src/Illuminate/Support/helpers.php	2019-08-20 01:56:25.000000000 +0200
++++ src/Illuminate/Support/helpers2.php	2019-08-20 01:57:11.000000000 +0200
+@@ -555,7 +555,7 @@
+ 
+             if ($segments) {
+                 foreach ($target as &$inner) {
+-                    data_set($inner, $segments, $value, $overwrite);
++                    $inner = data_set($inner, $segments, $value, $overwrite);
+                 }
+             } elseif ($overwrite) {
+                 foreach ($target as &$inner) {
+@@ -568,7 +568,7 @@
+                     $target[$segment] = [];
+                 }
+ 
+-                data_set($target[$segment], $segments, $value, $overwrite);
++                $target[$segment] = data_set($target[$segment], $segments, $value, $overwrite);
+             } elseif ($overwrite || ! Arr::exists($target, $segment)) {
+                 $target[$segment] = $value;
+             }
+@@ -578,7 +578,7 @@
+                     $target->{$segment} = [];
+                 }
+ 
+-                data_set($target->{$segment}, $segments, $value, $overwrite);
++                $target->{$segment} = data_set($target->{$segment}, $segments, $value, $overwrite);
+             } elseif ($overwrite || ! isset($target->{$segment})) {
+                 $target->{$segment} = $value;
+             }
+@@ -586,7 +586,7 @@
+             $target = [];
+ 
+             if ($segments) {
+-                data_set($target[$segment], $segments, $value, $overwrite);
++                $target[$segment] = data_set($target[$segment], $segments, $value, $overwrite);
+             } elseif ($overwrite) {
+                 $target[$segment] = $value;
+             }
