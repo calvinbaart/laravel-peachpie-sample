@@ -32,5 +32,4 @@ install:
 
 script:
   - cd Laravel.Tests
-  - dotnet run > /dev/null 2>&1 || true
   - dotnet run
