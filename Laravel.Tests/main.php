@@ -12,6 +12,8 @@
 require_once(__DIR__ . "/vendor/laravel_autoload.php");
 require_once(__DIR__ . "/vendor/autoload.php");
 
+mkdir("mock_classes");
+
 function main()
 {
     if (!ini_get('date.timezone')) {

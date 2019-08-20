@@ -17,6 +17,9 @@
     <Compile Include="
       dummy_files/dummy_openssl.php;
       dummy_files/dummy_browserkit.php;
+      dummy_files/dummy_network.php;
+      dummy_files/dummy_aws_sqs.php;
+      dummy_files/dummy_swift_mime_message.php;
       vendor/**/*.php;
       src/**/*.php;
     " Exclude="
@@ -30,7 +33,7 @@
         vendor/phpunit/**;
         vendor/mockery/**;
         vendor/bin/**;
-        vendor/aws/**;
+        vendor/aws/aws-sdk-php/**;
         vendor/symfony/cache/**;
         vendor/symfony/polyfill-util/LegacyTestListener.php;
         vendor/symfony/polyfill-util/TestListenerForV5.php;

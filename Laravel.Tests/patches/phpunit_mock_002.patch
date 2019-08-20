@@ -1,0 +1,8 @@
+--- vendor/phpunit/phpunit/src/Framework/MockObject/Generator/trait_class.tpl	2019-08-11 08:56:55.000000000 +0200
++++ vendor/phpunit/phpunit/src/Framework/MockObject/Generator/trait_class2.tpl	2019-08-20 14:25:14.000000000 +0200
+@@ -1,5 +1,3 @@
+-declare(strict_types=1);
+-
+ {prologue}class {class_name}
+ {
+     use {trait_name};

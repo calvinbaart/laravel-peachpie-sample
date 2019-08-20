@@ -1,0 +1,8 @@
+--- vendor/phpunit/phpunit/src/Framework/MockObject/Generator/mocked_class.tpl	2019-08-11 08:56:55.000000000 +0200
++++ vendor/phpunit/phpunit/src/Framework/MockObject/Generator/mocked_class2.tpl	2019-08-20 14:24:56.000000000 +0200
+@@ -1,5 +1,3 @@
+-declare(strict_types=1);
+-
+ {prologue}{class_declaration}
+ {
+     use \PHPUnit\Framework\MockObject\Api;{method}{clone}

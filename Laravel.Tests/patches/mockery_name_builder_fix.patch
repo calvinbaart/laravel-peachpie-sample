@@ -1,0 +1,20 @@
+--- vendor/mockery/mockery/library/Mockery/Generator/MockNameBuilder.php	2019-08-20 16:59:34.000000000 +0200
++++ vendor/mockery/mockery/library/Mockery/Generator/MockNameBuilder2.php	2019-08-20 16:59:41.000000000 +0200
+@@ -22,8 +22,6 @@
+ 
+ class MockNameBuilder
+ {
+-    protected static $mockCounter = 0;
+-
+     protected $parts = [];
+ 
+     public function addPart($part)
+@@ -35,7 +33,7 @@
+ 
+     public function build()
+     {
+-        $parts = ['Mockery', static::$mockCounter++];
++        $parts = ['Mockery'];
+ 
+         foreach ($this->parts as $part) {
+             $parts[] = str_replace("\\", "_", $part);

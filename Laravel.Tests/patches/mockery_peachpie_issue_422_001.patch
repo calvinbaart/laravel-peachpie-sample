@@ -1,0 +1,13 @@
+--- vendor/mockery/mockery/library/Mockery/Loader/EvalLoader.php	2019-08-07 17:01:07.000000000 +0200
++++ vendor/mockery/mockery/library/Mockery/Loader/EvalLoader2.php	2019-08-20 17:02:10.000000000 +0200
+@@ -31,6 +31,9 @@
+             return;
+         }
+ 
+-        eval("?>" . $definition->getCode());
++        $tmpfname = "mock_classes/Mockery_" . md5($definition->getClassName()) . ".php";
++        file_put_contents($tmpfname, $definition->getCode());
++
++        require $tmpfname;
+     }
+ }

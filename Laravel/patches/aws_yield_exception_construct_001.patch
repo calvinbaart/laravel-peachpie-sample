@@ -1,0 +1,26 @@
+--- vendor/aws/aws-sdk-php/src/Waiter.php	2019-08-14 20:14:46.000000000 +0200
++++ vendor/aws/aws-sdk-php/src/Waiter2.php	2019-08-20 15:55:38.000000000 +0200
+@@ -94,15 +94,22 @@
+                 // Execute the operation.
+                 $args = $this->getArgsForAttempt($attempt);
+                 $command = $this->client->getCommand($name, $args);
++                $yieldResult = true;
++
+                 try {
+                     if ($this->config['before']) {
+                         $this->config['before']($command, $attempt);
+                     }
+-                    $result = (yield $this->client->executeAsync($command));
++                    $result = $this->client->executeAsync($command);
+                 } catch (AwsException $e) {
++                    $yieldResult = false;
+                     $result = $e;
+                 }
+ 
++                if ($yieldResult) {
++                    $result = yield $result;
++                }
++
+                 // Determine the waiter's state and what to do next.
+                 $state = $this->determineState($result);
+                 if ($state === 'success') {
