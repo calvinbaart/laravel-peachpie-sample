@@ -1,0 +1,17 @@
+--- src/Illuminate/Foundation/helpers.php	2019-08-21 02:36:51.000000000 +0200
++++ src/Illuminate/Foundation/helpers2.php	2019-08-21 02:52:43.000000000 +0200
+@@ -716,6 +716,14 @@
+             }
+ 
+             return value($rescue);
++        } catch (\System\Exception $systemException) {
++            $e = new \Exception($e->ToString());
++
++            if ($report) {
++                report($e);
++            }
++
++            return value($rescue);
+         }
+     }
+ }

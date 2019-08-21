@@ -12,7 +12,7 @@
     <ProjectReference Include="..\Laravel\Laravel.msbuildproj" />
   </ItemGroup>
 
-  <Target Name="CopyLinkedContentFiles" BeforeTargets="Build">
+  <!-- <Target Name="CopyLinkedContentFiles" BeforeTargets="Build">
     <ItemGroup>
       <Tests Include="$(ProjectDir)tests/**" Exclude="$(ProjectDir)tests/Database/stubs/**" />
     </ItemGroup>
@@ -24,7 +24,7 @@
     <Copy SourceFiles="$(ProjectDir)vendor/mockery/mockery/library/Mockery/Mock.php" DestinationFolder="$(TargetDir)/vendor/mockery/mockery/library/Mockery" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
 
     <MakeDir Directories="$(TargetDir)\vendor" />
-  </Target>
+  </Target> -->
   
   <ItemGroup>
     <Compile Include="&#xA;      main.php;&#xA;      mock_classes/**/*.php;&#xA;      tests/**/*.php;&#xA;      vendor/**/*.php;&#xA;      src/Illuminate/Foundation/Testing/**/*.php;&#xA;      src/Illuminate/Support/Testing/**/*.php;&#xA;      src/Illuminate/Http/Testing/**/*.php;&#xA;    " Exclude="&#xA;      vendor/**/tests/**;&#xA;      vendor/orchestra/testbench-core/src/Http/Middleware/TrustProxies.php;&#xA;      vendor/mockery/mockery/library/Mockery/Mock.php;&#xA;      vendor\mockery\mockery\library\Mockery\Adapter\Phpunit\Legacy\TestListenerForV5.php;&#xA;      vendor\mockery\mockery\library\Mockery\Adapter\Phpunit\Legacy\TestListenerForV6.php;&#xA;      vendor/fzaninotto/faker/test/**;&#xA;      tests/Routing/fixtures/**;&#xA;    " />

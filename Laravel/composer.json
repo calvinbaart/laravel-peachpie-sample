@@ -145,11 +145,14 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
-        "pre-autoload-dump": [
+        "pre-install-cmd": [
             "rm -rf src",
             "cp -rf ../third-party/framework/src src",
             "cp -rf helpers.php src/Illuminate/helpers.php",
             "find laravel_patches -type f -name '*.patch' -print0 | sort -z | xargs -t -0 -n 1 patch -p0 -i"
+        ],
+        "post-install-cmd": [
+            "find patches -type f -name '*.patch' -print0 | sort -z | xargs -t -0 -n 1 patch -p0 -i"
         ],
         "post-autoload-dump": [
             "rm -rf vendor/laravel_composer",
@@ -157,8 +160,7 @@
             "mv vendor/autoload.php vendor/laravel_autoload.php",
             "mv vendor/composer vendor/laravel_composer",
             "sed -i.bak 's/\\/composer\\/autoload_real\\.php/\\/laravel_composer\\/autoload_real\\.php/g' vendor/laravel_autoload.php",
-            "rm -rf vendor/laravel_autoload.php.bak",
-            "find patches -type f -name '*.patch' -print0 | sort -z | xargs -t -0 -n 1 patch -p0 -i"
+            "rm -rf vendor/laravel_autoload.php.bak"
         ]
     }
 }

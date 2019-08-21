@@ -1,0 +1,37 @@
+--- src/Illuminate/Support/helpers.php	2019-08-21 02:35:49.000000000 +0200
++++ src/Illuminate/Support/helpers2.php	2019-08-21 02:35:37.000000000 +0200
+@@ -450,9 +450,18 @@
+         }
+ 
+         $results = [];
++        $parents = class_parents($class);
+ 
+-        foreach (array_reverse(class_parents($class)) + [$class => $class] as $class) {
+-            $results += trait_uses_recursive($class);
++        if (empty($parents)) {
++            foreach ([$class => $class] as $cls) {
++                $results = array_merge($results, trait_uses_recursive($cls));
++            }
++
++            return array_unique($results);
++        }
++
++        foreach (array_reverse($parents) + [$class => $class] as $class) {
++            $results = array_merge($results, trait_uses_recursive($class));
+         }
+ 
+         return array_unique($results);
+@@ -1194,8 +1203,12 @@
+     {
+         $traits = class_uses($trait);
+ 
++        if (empty($traits)) {
++            return [];
++        }
++
+         foreach ($traits as $trait) {
+-            $traits += trait_uses_recursive($trait);
++            $traits = array_merge($traits, trait_uses_recursive($trait));
+         }
+ 
+         return $traits;

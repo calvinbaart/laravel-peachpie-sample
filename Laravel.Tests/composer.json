@@ -20,14 +20,14 @@
         }
     },
     "scripts": {
-        "pre-autoload-dump": [
+        "pre-install-cmd": [
             "rm -rf tests",
             "rm -rf src",
             "cp -rf ../third-party/framework/tests .",
             "cp -rf ../third-party/framework/src src",
-            "rm -rf tests/Database/DatabaseSeederTest.php"
+            "find tests_patches -type f -name '*.patch' -print0 | sort -z | xargs -t -0 -n 1 patch -p0 -i"
         ],
-        "post-autoload-dump": [
+        "post-install-cmd": [
             "find patches -type f -name '*.patch' -print0 | sort -z | xargs -t -0 -n 1 patch -p0 -i"
         ]
     },
