@@ -1,16 +1,24 @@
-## Web Application Sample
+## Laravel SDK for PeachPie [![Build Status](https://travis-ci.com/calvinbaart/laravel-peachpie-sample.svg?branch=feature%2Flaravel-sdk)](https://travis-ci.com/calvinbaart/laravel-peachpie-sample)
 
-The `website` project is written in PHP and compiled to .NET Core.
+This project fetches the latest Laravel and compiles it (with some patches) for PeachPie.
 
-Supporting `App` initializes a web server running on localhost:5004 and passing requests to compiled PHP scripts.
+## Project Structure
+
+- ``app``: Main project file for the WebServer. Runs AspNetCore.
+- ``Laravel``: Laravel with all its dependencies
+- ``Laravel.AspNetCore``: AspNetCore extensions for Laravel
+- ``Laravel.ComposerDummy``: Dummy project for composer to override some already compiled dependencies
+- ``Laravel.Sdk``: Classes for Laravel <-> C# communication.
+- ``Laravel.Tests``: PHPUnit tests for Laravel
+- ``website``: All the website-specific files, this would be your root folder in a Laravel project
 
 ## What does it do?
 
-The PHP sources are compiled to .NET Core by Peachpie compiler which is seamlessly downloaded by *dotnet* itself.
+The code currently contains two run paths. ``App`` and ``Laravel.Tests``. 
 
-The sample instantiates Kestrel - the opensource web server - and ASP.NET Core pipeline. The pipeline handles requests to PHP files using Peachpie `RequestDelegate` by calling corresponding compiled scripts in `website.dll`.
+Starting app would run a full webserver just like a regular ``Asp.Net`` project. The Webserver redirects all requests to the code in ``website``.
 
-Note the original PHP sources (*.php files) are not needed to run the compiled application.
+Starting Laravel.Tests would run PHPUnit testing, these tests are the standard tests from the laravel repository.
 
 ## Prerequisites
 
@@ -19,4 +27,5 @@ Note the original PHP sources (*.php files) are not needed to run the compiled a
 
 ## How to run the project
 
-1. `dotnet run -p app`
+1. `dotnet run app`
+2. `dotnet run Laravel.Tests`

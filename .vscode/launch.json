@@ -2,22 +2,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": ".NET Core Launch (console)",
+            "name": ".NET Core Launch (App)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build",
-            "program": "${workspaceRoot}/app/bin/Debug/netcoreapp2.1/app.dll",
-            "args": [],
-            "cwd": "${workspaceRoot}/app/bin/Debug/netcoreapp2.1",
-            "stopAtEntry": false,
-            "justMyCode": false,
-            "externalConsole": false
-        },
-        {
-            "name": ".NET Core Launch (web)",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build",
+            "preLaunchTask": "buildapp",
             "program": "${workspaceRoot}/app/bin/Debug/netcoreapp2.1/app.dll",
             "args": [],
             "cwd": "${workspaceRoot}/app/bin/Debug/netcoreapp2.1",
@@ -44,6 +32,18 @@
                 "/Views": "${workspaceRoot}/Views"
             },
             "justMyCode": false
+        },
+        {
+            "name": ".NET Core Launch (Tests)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "buildtests",
+            "program": "${workspaceRoot}/Laravel.Tests/bin/Debug/netcoreapp2.1/app.dll",
+            "args": [],
+            "cwd": "${workspaceRoot}/Laravel.Tests",
+            "stopAtEntry": false,
+            "justMyCode": false,
+            "externalConsole": false
         },
         {
             "name": ".NET Core Attach",
