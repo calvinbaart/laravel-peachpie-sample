@@ -20,7 +20,6 @@
 
   <ItemGroup>
     <Compile Include="
-      dummy.php;
       app/**/*.php;
       config/**/*.php;
       bootstrap/**/*.php;

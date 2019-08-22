@@ -10,27 +10,6 @@
             "args": [],
             "cwd": "${workspaceRoot}/app/bin/Debug/netcoreapp2.1",
             "stopAtEntry": false,
-            "justMyCode": false,
-            "launchBrowser": {
-                "enabled": true,
-                "args": "${auto-detect-url}",
-                "windows": {
-                    "command": "cmd.exe",
-                    "args": "/C start ${auto-detect-url}"
-                },
-                "osx": {
-                    "command": "open"
-                },
-                "linux": {
-                    "command": "xdg-open"
-                }
-            },
-            "env": {
-                "ASPNETCORE_ENVIRONMENT": "Development"
-            },
-            "sourceFileMap": {
-                "/Views": "${workspaceRoot}/Views"
-            },
             "justMyCode": false
         },
         {
@@ -38,7 +17,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "buildtests",
-            "program": "${workspaceRoot}/Laravel.Tests/bin/Debug/netcoreapp2.1/app.dll",
+            "program": "${workspaceRoot}/Laravel.Tests/bin/Debug/netcoreapp2.1/Laravel.Tests.dll",
             "args": [],
             "cwd": "${workspaceRoot}/Laravel.Tests",
             "stopAtEntry": false,

@@ -17,9 +17,11 @@
     <Compile Include="
       dummy_files/dummy_openssl.php;
       dummy_files/dummy_browserkit.php;
+      dummy_files/dummy_network_const.php;
       dummy_files/dummy_network.php;
       dummy_files/dummy_aws_sqs.php;
       dummy_files/dummy_swift_mime_message.php;
+      dummy_files/dummy_peachpie.php;
       vendor/**/*.php;
       src/**/*.php;
     " Exclude="

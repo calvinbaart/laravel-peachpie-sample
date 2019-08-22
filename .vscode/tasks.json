@@ -19,8 +19,7 @@
                 "build",
                 "${workspaceFolder}/app/app.csproj"
             ],
-            "problemMatcher": "$msCompile",
-            "dependsOn":["cleanapp"]
+            "problemMatcher": "$msCompile"
         },
         {
             "label": "cleantests",
@@ -40,8 +39,7 @@
                 "build",
                 "${workspaceFolder}/Laravel.Tests/Laravel.Tests.msbuildproj"
             ],
-            "problemMatcher": "$msCompile",
-            "dependsOn":["cleantests"]
+            "problemMatcher": "$msCompile"
         }
     ]
 }

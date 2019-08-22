@@ -9,7 +9,12 @@
 * file that was distributed with this source code.
 */
 
-require_once(__DIR__ . "/vendor/laravel_autoload.php");
+if (!class_exists("\Pchp\Core\Context")) {
+    require_once(__DIR__ . "/../Laravel/vendor/laravel_autoload.php");
+} else {
+    require_once(__DIR__ . "/vendor/laravel_autoload.php");
+}
+
 require_once(__DIR__ . "/vendor/autoload.php");
 
 function main()

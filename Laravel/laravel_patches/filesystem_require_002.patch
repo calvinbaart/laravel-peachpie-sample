@@ -1,0 +1,24 @@
+--- src/Illuminate/Filesystem/Filesystem.php	2019-08-22 13:05:09.642900500 +0200
++++ src/Illuminate/Filesystem/Filesystem2.php	2019-08-22 13:05:56.428833100 +0200
+@@ -81,6 +81,10 @@
+     public function getRequire($path)
+     {
+         if ($this->isFile($path)) {
++            if (!class_exists("\Pchp\Core\Context") || \PeachPie\Runtime::isScriptCompiled($path)) {
++                return require $path;
++            }
++
+             return eval("?>" . file_get_contents($path));
+         }
+ 
+@@ -95,6 +99,10 @@
+      */
+     public function requireOnce($file)
+     {
++        if (!class_exists("\Pchp\Core\Context") || \PeachPie\Runtime::isScriptCompiled($file)) {
++            return require_once $file;
++        }
++
+         eval("?>" . file_get_contents($file));
+     }
+ 
