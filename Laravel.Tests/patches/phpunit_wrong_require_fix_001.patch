@@ -1,0 +1,20 @@
+--- vendor/phpunit/phpunit/src/TextUI/Command.php	2019-08-25 12:52:20.658695700 +0200
++++ vendor/phpunit/phpunit/src/TextUI/Command2.php	2019-08-25 12:52:14.524000000 +0200
+@@ -948,7 +948,7 @@
+ 
+             $loaderFile = \stream_resolve_include_path($loaderFile);
+ 
+-            if ($loaderFile) {
++            if ($loaderFile && ends_with($printerFile, ".php")) {
+                 require $loaderFile;
+             }
+         }
+@@ -1003,7 +1003,7 @@
+ 
+             $printerFile = \stream_resolve_include_path($printerFile);
+ 
+-            if ($printerFile) {
++            if ($printerFile && ends_with($printerFile, ".php")) {
+                 require $printerFile;
+             }
+         }
