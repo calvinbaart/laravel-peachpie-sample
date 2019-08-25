@@ -1,0 +1,12 @@
+--- vendor/mockery/mockery/library/Mockery/Mock.php	2019-08-25 15:11:41.866967300 +0200
++++ vendor/mockery/mockery/library/Mockery/Mock2.php	2019-08-25 21:30:52.303748200 +0200
+@@ -725,8 +725,7 @@
+ 
+             case 'Traversable':
+             case 'Generator':
+-                // Remove eval() when minimum version >=5.5
+-                $generator = eval('return function () { yield; };');
++                $generator = function () { yield; };
+                 return $generator();
+ 
+             case 'self':

@@ -1,0 +1,11 @@
+--- tests/Broadcasting/RedisBroadcasterTest.php	2019-08-25 15:11:16.302152300 +0200
++++ tests/Broadcasting/RedisBroadcasterTest2.php	2019-08-25 22:34:41.669145400 +0200
+@@ -146,7 +146,7 @@
+         $request = m::mock(\Illuminate\Http\Request::class);
+         $request->channel_name = $channel;
+ 
+-        $user = m::mock('User');
++        $user = m::mock(\Illuminate\Contracts\Auth\Authenticatable::class);
+         $user->shouldReceive('getAuthIdentifier')
+              ->andReturn(42);
+ 
