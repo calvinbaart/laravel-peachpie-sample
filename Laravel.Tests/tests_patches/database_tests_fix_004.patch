@@ -1,0 +1,10 @@
+--- tests/Database/DatabaseConnectorTest.php	2019-08-25 23:10:20.958097400 +0200
++++ tests/Database/DatabaseConnectorTest2.php	2019-08-25 23:16:12.058851700 +0200
+@@ -2,6 +2,7 @@
+ 
+ namespace Illuminate\Tests\Database;
+ 
++use stdClass;
+ use PDO;
+ use Mockery as m;
+ use PHPUnit\Framework\TestCase;

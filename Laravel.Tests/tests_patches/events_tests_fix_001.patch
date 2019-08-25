@@ -1,0 +1,20 @@
+--- tests/Events/EventsDispatcherTest.php	2019-08-25 22:50:51.366041800 +0200
++++ tests/Events/EventsDispatcherTest2.php	2019-08-25 22:57:54.913137100 +0200
+@@ -48,7 +48,7 @@
+     public function testContainerResolutionOfEventHandlers()
+     {
+         $d = new Dispatcher($container = m::mock(Container::class));
+-        $container->shouldReceive('make')->once()->with('FooHandler')->andReturn($handler = m::mock(stdClass::class));
++        $container->shouldReceive('make')->once()->with('FooHandler')->andReturn($handler = m::mock(\stdClass::class));
+         $handler->shouldReceive('onFooEvent')->once()->with('foo', 'bar');
+         $d->listen('foo', 'FooHandler@onFooEvent');
+         $d->dispatch('foo', ['foo', 'bar']);
+@@ -57,7 +57,7 @@
+     public function testContainerResolutionOfEventHandlersWithDefaultMethods()
+     {
+         $d = new Dispatcher($container = m::mock(Container::class));
+-        $container->shouldReceive('make')->once()->with('FooHandler')->andReturn($handler = m::mock(stdClass::class));
++        $container->shouldReceive('make')->once()->with('FooHandler')->andReturn($handler = m::mock(\stdClass::class));
+         $handler->shouldReceive('handle')->once()->with('foo', 'bar');
+         $d->listen('foo', 'FooHandler');
+         $d->dispatch('foo', ['foo', 'bar']);

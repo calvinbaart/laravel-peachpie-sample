@@ -1,0 +1,14 @@
+--- tests/Database/DatabaseEloquentBelongsToTest.php	2019-08-25 22:50:50.919041500 +0200
++++ tests/Database/DatabaseEloquentBelongsToTest2.php	2019-08-25 23:01:44.986243100 +0200
+@@ -109,9 +109,9 @@
+     public function testModelsAreProperlyMatchedToParents()
+     {
+         $relation = $this->getRelation();
+-        $result1 = m::mock(stdClass::class);
++        $result1 = m::mock(\stdClass::class);
+         $result1->shouldReceive('getAttribute')->with('id')->andReturn(1);
+-        $result2 = m::mock(stdClass::class);
++        $result2 = m::mock(\stdClass::class);
+         $result2->shouldReceive('getAttribute')->with('id')->andReturn(2);
+         $model1 = new EloquentBelongsToModelStub;
+         $model1->foreign_key = 1;

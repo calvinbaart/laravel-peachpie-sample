@@ -1,0 +1,11 @@
+--- tests/Database/DatabaseEloquentPivotTest.php	2019-08-25 22:50:51.061069700 +0200
++++ tests/Database/DatabaseEloquentPivotTest2.php	2019-08-25 23:03:28.201578100 +0200
+@@ -114,7 +114,7 @@
+         $pivot->setPivotKeys('foreign', 'other');
+         $pivot->foreign = 'foreign.value';
+         $pivot->other = 'other.value';
+-        $query = m::mock(stdClass::class);
++        $query = m::mock(\stdClass::class);
+         $query->shouldReceive('where')->once()->with(['foreign' => 'foreign.value', 'other' => 'other.value'])->andReturn($query);
+         $query->shouldReceive('delete')->once()->andReturn(true);
+         $pivot->expects($this->once())->method('newQueryWithoutRelationships')->will($this->returnValue($query));

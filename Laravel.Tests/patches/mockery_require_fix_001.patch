@@ -1,0 +1,24 @@
+--- vendor/mockery/mockery/library/Mockery.php	2019-08-25 23:37:50.719230000 +0200
++++ vendor/mockery/mockery/library/Mockery2.php	2019-08-25 23:37:42.195000000 +0200
+@@ -931,15 +931,17 @@
+ 
+         $targetCode.= "$type $shortName {} ";
+ 
++        eval("?>" . $targetCode);
++
+         /*
+          * We could eval here, but it doesn't play well with the way
+          * PHPUnit tries to backup global state and the require definition
+          * loader
+          */
+-        $tmpfname = tempnam(sys_get_temp_dir(), "Mockery");
+-        file_put_contents($tmpfname, $targetCode);
+-        require $tmpfname;
+-        \Mockery::registerFileForCleanUp($tmpfname);
++        // $tmpfname = tempnam(sys_get_temp_dir(), "Mockery");
++        // file_put_contents($tmpfname, $targetCode);
++        // require $tmpfname;
++        // \Mockery::registerFileForCleanUp($tmpfname);
+     }
+ 
+     /**

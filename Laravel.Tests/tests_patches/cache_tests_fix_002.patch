@@ -1,0 +1,29 @@
+--- tests/Validation/ValidationValidatorTest.php	2019-08-25 22:50:52.199578200 +0200
++++ tests/Validation/ValidationValidatorTest2.php	2019-08-25 22:54:02.794184100 +0200
+@@ -252,7 +252,7 @@
+         $v = new Validator($trans, [], ['name' => 'required']);
+         $v->setContainer($container = m::mock(Container::class));
+         $v->addReplacer('required', 'Foo@bar');
+-        $container->shouldReceive('make')->once()->with('Foo')->andReturn($foo = m::mock(stdClass::class));
++        $container->shouldReceive('make')->once()->with('Foo')->andReturn($foo = m::mock(\stdClass::class));
+         $foo->shouldReceive('bar')->once()->andReturn('replaced!');
+         $v->passes();
+         $v->messages()->setFormat(':message');
+@@ -3347,7 +3347,7 @@
+         $v = new Validator($trans, ['name' => 'taylor'], ['name' => 'foo']);
+         $v->setContainer($container = m::mock(Container::class));
+         $v->addExtension('foo', 'Foo@bar');
+-        $container->shouldReceive('make')->once()->with('Foo')->andReturn($foo = m::mock(stdClass::class));
++        $container->shouldReceive('make')->once()->with('Foo')->andReturn($foo = m::mock(\stdClass::class));
+         $foo->shouldReceive('bar')->once()->andReturn(false);
+         $this->assertFalse($v->passes());
+         $v->messages()->setFormat(':message');
+@@ -3361,7 +3361,7 @@
+         $v = new Validator($trans, ['name' => 'taylor'], ['name' => 'foo']);
+         $v->setContainer($container = m::mock(Container::class));
+         $v->addExtension('foo', 'Foo');
+-        $container->shouldReceive('make')->once()->with('Foo')->andReturn($foo = m::mock(stdClass::class));
++        $container->shouldReceive('make')->once()->with('Foo')->andReturn($foo = m::mock(\stdClass::class));
+         $foo->shouldReceive('validate')->once()->andReturn(false);
+         $this->assertFalse($v->passes());
+         $v->messages()->setFormat(':message');

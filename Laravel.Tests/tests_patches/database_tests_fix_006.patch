@@ -1,0 +1,11 @@
+--- tests/Database/DatabaseEloquentCollectionTest.php	2019-08-25 22:50:50.941041900 +0200
++++ tests/Database/DatabaseEloquentCollectionTest2.php	2019-08-25 23:03:06.508058300 +0200
+@@ -158,7 +158,7 @@
+     public function testLoadMethodEagerLoadsGivenRelationships()
+     {
+         $c = $this->getMockBuilder(Collection::class)->setMethods(['first'])->setConstructorArgs([['foo']])->getMock();
+-        $mockItem = m::mock(stdClass::class);
++        $mockItem = m::mock(\stdClass::class);
+         $c->expects($this->once())->method('first')->will($this->returnValue($mockItem));
+         $mockItem->shouldReceive('newQueryWithoutRelationships')->once()->andReturn($mockItem);
+         $mockItem->shouldReceive('with')->with(['bar', 'baz'])->andReturn($mockItem);
