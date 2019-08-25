@@ -8,6 +8,7 @@ app/bin
 app/obj
 Laravel/bin
 Laravel/obj
+Laravel/tests
 Laravel.Sdk/bin
 Laravel.Sdk/obj
 Laravel.AspNetCore/bin
@@ -17,3 +18,4 @@ Laravel.Tests/obj
 Laravel.Tests/vendor
 Laravel.Tests/.phpunit.result.cache
 .vs
+website/mix-manifest.json

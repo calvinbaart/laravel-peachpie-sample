@@ -1,0 +1,26 @@
+--- vendor/aws/aws-sdk-php/src/Credentials/InstanceProfileProvider.php	2019-08-24 19:18:12.136286500 +0200
++++ vendor/aws/aws-sdk-php/src/Credentials/InstanceProfileProvider2.php	2019-08-25 01:13:55.191006800 +0200
+@@ -68,8 +68,10 @@
+             }
+             $result = null;
+             while ($result == null) {
++                $yieldValue = null;
++
+                 try {
+-                    $json = (yield $this->request(self::CRED_PATH . $this->profile));
++                    $json = $yieldValue = $this->request(self::CRED_PATH . $this->profile);
+                     $result = $this->decodeResult($json);
+                 } catch (InvalidJsonException $e) {
+                     if ($this->attempts < $this->retries) {
+@@ -88,6 +90,11 @@
+                         );
+                     }
+                 }
++
++                if ($yieldValue !== null) {
++                    yield $yieldValue;
++                }
++
+                 $this->attempts++;
+             }
+             yield new Credentials(

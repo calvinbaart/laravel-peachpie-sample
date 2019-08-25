@@ -1,0 +1,26 @@
+--- vendor/aws/aws-sdk-php/src/S3/Exception/S3MultipartUploadException.php	2019-08-25 12:09:03.393519400 +0200
++++ vendor/aws/aws-sdk-php/src/S3/Exception/S3MultipartUploadException2.php	2019-08-25 12:14:41.756241900 +0200
+@@ -71,14 +71,14 @@
+      */
+     private function collectPathInfo(CommandInterface $cmd)
+     {
+-        if (empty($this->bucket) && isset($cmd['Bucket'])) {
+-            $this->bucket = $cmd['Bucket'];
+-        }
+-        if (empty($this->key) && isset($cmd['Key'])) {
+-            $this->key = $cmd['Key'];
+-        }
+-        if (empty($this->filename) && isset($cmd['Body'])) {
+-            $this->filename = $cmd['Body']->getMetadata('uri');
+-        }
++        // if (empty($this->bucket) && isset($cmd['Bucket'])) {
++        //     $this->bucket = $cmd['Bucket'];
++        // }
++        // if (empty($this->key) && isset($cmd['Key'])) {
++        //     $this->key = $cmd['Key'];
++        // }
++        // if (empty($this->filename) && isset($cmd['Body'])) {
++        //     $this->filename = $cmd['Body']->getMetadata('uri');
++        // }
+     }
+ }

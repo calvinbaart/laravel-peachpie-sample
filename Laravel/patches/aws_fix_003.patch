@@ -1,0 +1,11 @@
+--- vendor/aws/aws-sdk-php/src/Crypto/DecryptionTrait.php	2019-08-25 12:22:52.157111900 +0200
++++ vendor/aws/aws-sdk-php/src/Crypto/DecryptionTrait2.php	2019-08-25 12:27:03.897201900 +0200
+@@ -53,7 +53,7 @@
+      *
+      * @internal
+      */
+-    protected function decrypt(
++    public function decrypt(
+         $cipherText,
+         MaterialsProvider $provider,
+         MetadataEnvelope $envelope,

@@ -1,0 +1,66 @@
+--- vendor/symfony/event-dispatcher-contracts/EventDispatcherInterface.php	2019-08-23 20:21:47.486312500 +0200
++++ vendor/symfony/event-dispatcher-contracts/EventDispatcherInterface2.php	2019-08-23 23:39:22.639737400 +0200
+@@ -13,46 +13,23 @@
+ 
+ use Psr\EventDispatcher\EventDispatcherInterface as PsrEventDispatcherInterface;
+ 
+-if (interface_exists(PsrEventDispatcherInterface::class)) {
++/**
++ * Allows providing hooks on domain-specific lifecycles by dispatching events.
++ */
++interface EventDispatcherInterface extends PsrEventDispatcherInterface
++{
+     /**
+-     * Allows providing hooks on domain-specific lifecycles by dispatching events.
++     * Dispatches an event to all registered listeners.
++     *
++     * For BC with Symfony 4, the $eventName argument is not declared explicitly on the
++     * signature of the method. Implementations that are not bound by this BC constraint
++     * MUST declare it explicitly, as allowed by PHP.
++     *
++     * @param object      $event     The event to pass to the event handlers/listeners
++     * @param string|null $eventName The name of the event to dispatch. If not supplied,
++     *                               the class of $event should be used instead.
++     *
++     * @return object The passed $event MUST be returned
+      */
+-    interface EventDispatcherInterface extends PsrEventDispatcherInterface
+-    {
+-        /**
+-         * Dispatches an event to all registered listeners.
+-         *
+-         * For BC with Symfony 4, the $eventName argument is not declared explicitly on the
+-         * signature of the method. Implementations that are not bound by this BC constraint
+-         * MUST declare it explicitly, as allowed by PHP.
+-         *
+-         * @param object      $event     The event to pass to the event handlers/listeners
+-         * @param string|null $eventName The name of the event to dispatch. If not supplied,
+-         *                               the class of $event should be used instead.
+-         *
+-         * @return object The passed $event MUST be returned
+-         */
+-        public function dispatch($event/*, string $eventName = null*/);
+-    }
+-} else {
+-    /**
+-     * Allows providing hooks on domain-specific lifecycles by dispatching events.
+-     */
+-    interface EventDispatcherInterface
+-    {
+-        /**
+-         * Dispatches an event to all registered listeners.
+-         *
+-         * For BC with Symfony 4, the $eventName argument is not declared explicitly on the
+-         * signature of the method. Implementations that are not bound by this BC constraint
+-         * MUST declare it explicitly, as allowed by PHP.
+-         *
+-         * @param object      $event     The event to pass to the event handlers/listeners
+-         * @param string|null $eventName The name of the event to dispatch. If not supplied,
+-         *                               the class of $event should be used instead.
+-         *
+-         * @return object The passed $event MUST be returned
+-         */
+-        public function dispatch($event/*, string $eventName = null*/);
+-    }
++    public function dispatch($event/*, string $eventName = null*/);
+ }

@@ -1,0 +1,53 @@
+--- vendor/aws/aws-sdk-php/src/S3/S3MultiRegionClient.php	2019-08-24 19:18:13.986783500 +0200
++++ vendor/aws/aws-sdk-php/src/S3/S3MultiRegionClient2.php	2019-08-25 01:11:29.370594200 +0200
+@@ -244,8 +244,10 @@
+                     $command,
+                     $cacheKey
+                 ) {
++                    $yieldValues = [];
++
+                     try {
+-                        yield $handler($command);
++                        $yieldValues []= $handler($command);
+                     } catch (PermanentRedirectException $e) {
+                         if (empty($command['Bucket'])) {
+                             throw $e;
+@@ -256,13 +258,15 @@
+                             $region = $result['@metadata']['headers']['x-amz-bucket-region'];
+                             $this->cache->set($cacheKey, $region);
+                         } else {
+-                            $region = (yield $this->determineBucketRegionAsync(
++                            $region = $this->determineBucketRegionAsync(
+                                 $command['Bucket']
+-                            ));
++                            );
++
++                            $yieldValues []= $region;
+                         }
+ 
+                         $command['@region'] = $region;
+-                        yield $handler($command);
++                        $yieldValues []= $handler($command);
+                     } catch (AwsException $e) {
+                         if ($e->getAwsErrorCode() === 'AuthorizationHeaderMalformed') {
+                             $region = $this->determineBucketRegionFromExceptionBody(
+@@ -272,7 +276,7 @@
+                                 $this->cache->set($cacheKey, $region);
+ 
+                                 $command['@region'] = $region;
+-                                yield $handler($command);
++                                $yieldValues []= $handler($command);
+                             } else {
+                                 throw $e;
+                             }
+@@ -280,6 +284,10 @@
+                             throw $e;
+                         }
+                     }
++
++                    foreach ($yieldValues as $value) {
++                        yield $value;
++                    }
+                 });
+             };
+         };

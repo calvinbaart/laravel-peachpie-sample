@@ -5,7 +5,6 @@ class Runtime
 {
     public static function isScriptCompiled(string $script): bool
     {
-        // unimplemented
-        return false;
+        return \Pchp\Core\Context::TryResolveScript(realpath(__DIR__ . "/../"), $script)->IsValid;
     }
 }

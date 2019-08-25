@@ -1,0 +1,11 @@
+--- vendor/aws/aws-sdk-php/src/StreamRequestPayloadMiddleware.php	2019-08-25 12:09:03.770489400 +0200
++++ vendor/aws/aws-sdk-php/src/StreamRequestPayloadMiddleware2.php	2019-08-25 12:10:33.005757000 +0200
+@@ -44,7 +44,7 @@
+         // Check if any present input member is a stream and requires the
+         // content length
+         foreach ($operation->getInput()->getMembers() as $name => $member) {
+-            if (!empty($member['streaming']) && isset($command[$name])) {
++            if (!empty($member['streaming']) && false) {//isset($command[$name])) {
+                 $hasStreaming = true;
+                 if (!empty($member['requiresLength'])) {
+                     $requiresLength = true;

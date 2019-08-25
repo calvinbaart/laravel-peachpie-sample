@@ -15,13 +15,7 @@
 
   <ItemGroup>
     <Compile Include="
-      dummy_files/dummy_openssl.php;
-      dummy_files/dummy_browserkit.php;
-      dummy_files/dummy_network_const.php;
-      dummy_files/dummy_network.php;
-      dummy_files/dummy_aws_sqs.php;
-      dummy_files/dummy_swift_mime_message.php;
-      dummy_files/dummy_peachpie.php;
+      dummy_files/*.php;
       vendor/**/*.php;
       src/**/*.php;
     " Exclude="
@@ -35,7 +29,7 @@
         vendor/phpunit/**;
         vendor/mockery/**;
         vendor/bin/**;
-        vendor/aws/aws-sdk-php/**;
+        vendor/aws/aws-sdk-php/src/Handler/GuzzleV5/**;
         vendor/symfony/cache/**;
         vendor/symfony/polyfill-util/LegacyTestListener.php;
         vendor/symfony/polyfill-util/TestListenerForV5.php;

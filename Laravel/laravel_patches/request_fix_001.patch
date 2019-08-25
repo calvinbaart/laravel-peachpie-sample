@@ -1,0 +1,11 @@
+--- src/Illuminate/Http/Concerns/InteractsWithInput.php	2019-08-24 19:16:32.492424500 +0200
++++ src/Illuminate/Http/Concerns/InteractsWithInput2.php	2019-08-24 19:16:46.139576800 +0200
+@@ -184,7 +184,7 @@
+         $input = array_replace_recursive($this->input(), $this->allFiles());
+ 
+         if (! $keys) {
+-            return $input;
++            return $input ?? null;
+         }
+ 
+         $results = [];

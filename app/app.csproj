@@ -32,6 +32,7 @@
       <Resources Include="$(ProjectDir)../website/resources/**" />
       <Public Include="$(ProjectDir)../website/public/**" />
       <Vendor Include="$(ProjectDir)../website/vendor/**" />
+      <VendorLaravel Include="$(ProjectDir)../Laravel/vendor/**" />
       <ViewCache Include="$(ProjectDir)../website/storage/framework/views/**" />
     </ItemGroup>
 
@@ -46,6 +47,8 @@
     <Copy SourceFiles="@(Public)" DestinationFolder="$(TargetDir)\public\%(RecursiveDir)" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
 
     <Copy SourceFiles="@(Vendor)" DestinationFolder="$(TargetDir)\vendor\%(RecursiveDir)" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
+
+    <Copy SourceFiles="@(VendorLaravel)" DestinationFolder="$(TargetDir)\vendor\%(RecursiveDir)" SkipUnchangedFiles="false" OverwriteReadOnlyFiles="true" />
 
     <MakeDir Directories="$(TargetDir)\storage" />
     <MakeDir Directories="$(TargetDir)\storage\app" />

@@ -1,0 +1,14 @@
+--- vendor/aws/aws-sdk-php/src/S3Control/S3ControlEndpointMiddleware.php	2019-08-25 12:06:12.419946900 +0200
++++ vendor/aws/aws-sdk-php/src/S3Control/S3ControlEndpointMiddleware2.php	2019-08-25 12:06:08.900000000 +0200
+@@ -68,8 +68,9 @@
+         CommandInterface $command,
+         RequestInterface $request
+     ) {
+-        return isset($command['@use_dual_stack_endpoint'])
+-            ? $command['@use_dual_stack_endpoint'] : $this->dualStackByDefault;
++        return false;
++        // return isset($command['@use_dual_stack_endpoint'])
++        //     ? $command['@use_dual_stack_endpoint'] : $this->dualStackByDefault;
+     }
+ 
+     private function getDualStackHost($host)

@@ -1,0 +1,11 @@
+--- vendor/aws/aws-sdk-php/src/Crypto/EncryptionTrait.php	2019-08-25 12:22:52.166111900 +0200
++++ vendor/aws/aws-sdk-php/src/Crypto/EncryptionTrait2.php	2019-08-25 12:26:45.895472800 +0200
+@@ -48,7 +48,7 @@
+      *
+      * @internal
+      */
+-    protected function encrypt(
++    public function encrypt(
+         Stream $plaintext,
+         array $cipherOptions,
+         MaterialsProvider $provider,

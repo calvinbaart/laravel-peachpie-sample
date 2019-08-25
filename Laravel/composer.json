@@ -96,7 +96,6 @@
     },
     "autoload": {
         "files": [
-            "dummy_files/dummy_aws_sqs.php",
             "dummy_files/dummy_browserkit.php",
             "dummy_files/dummy_peachpie.php",
             "dummy_files/dummy_swift_mime_message.php",
