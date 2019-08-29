@@ -1,0 +1,38 @@
+--- tests/Auth/AuthGuardTest.php	2019-08-27 23:38:02.487169700 +0200
++++ tests/Auth/AuthGuardTest2.php	2019-08-27 23:37:56.512000000 +0200
+@@ -33,7 +33,7 @@
+         [$session, $provider, $request, $cookie] = $this->getMocks();
+         $guard = m::mock(SessionGuard::class.'[check,attempt]', ['default', $provider, $session]);
+         $guard->shouldReceive('check')->once()->andReturn(false);
+-        $guard->shouldReceive('attempt')->once()->with(['email' => 'foo@bar.com', 'password' => 'secret'])->andReturn(true);
++        $guard->shouldReceive('attempt')->once()->with(['email' => 'foo@bar.com', 'password' => 'secret'], false)->andReturn(true);
+         $request = Request::create('/', 'GET', [], [], [], ['PHP_AUTH_USER' => 'foo@bar.com', 'PHP_AUTH_PW' => 'secret']);
+         $guard->setRequest($request);
+ 
+@@ -59,7 +59,7 @@
+         [$session, $provider, $request, $cookie] = $this->getMocks();
+         $guard = m::mock(SessionGuard::class.'[check,attempt]', ['default', $provider, $session]);
+         $guard->shouldReceive('check')->once()->andReturn(false);
+-        $guard->shouldReceive('attempt')->once()->with(['email' => 'foo@bar.com', 'password' => 'secret'])->andReturn(false);
++        $guard->shouldReceive('attempt')->once()->with(['email' => 'foo@bar.com', 'password' => 'secret'], false)->andReturn(false);
+         $request = Request::create('/', 'GET', [], [], [], ['PHP_AUTH_USER' => 'foo@bar.com', 'PHP_AUTH_PW' => 'secret']);
+         $guard->setRequest($request);
+         $guard->basic('email');
+@@ -70,7 +70,7 @@
+         [$session, $provider, $request, $cookie] = $this->getMocks();
+         $guard = m::mock(SessionGuard::class.'[check,attempt]', ['default', $provider, $session]);
+         $guard->shouldReceive('check')->once()->andReturn(false);
+-        $guard->shouldReceive('attempt')->once()->with(['email' => 'foo@bar.com', 'password' => 'secret', 'active' => 1])->andReturn(true);
++        $guard->shouldReceive('attempt')->once()->with(['email' => 'foo@bar.com', 'password' => 'secret', 'active' => 1], false)->andReturn(true);
+         $request = Request::create('/', 'GET', [], [], [], ['PHP_AUTH_USER' => 'foo@bar.com', 'PHP_AUTH_PW' => 'secret']);
+         $guard->setRequest($request);
+ 
+@@ -82,7 +82,7 @@
+         [$session, $provider, $request, $cookie] = $this->getMocks();
+         $guard = m::mock(SessionGuard::class.'[check,attempt]', ['default', $provider, $session]);
+         $guard->shouldReceive('check')->once()->andReturn(false);
+-        $guard->shouldReceive('attempt')->once()->with(['email' => 'foo@bar.com', 'password' => 'secret', 'active' => 1, 'type' => [1, 2, 3]])->andReturn(true);
++        $guard->shouldReceive('attempt')->once()->with(['email' => 'foo@bar.com', 'password' => 'secret', 'active' => 1, 'type' => [1, 2, 3]], false)->andReturn(true);
+         $request = Request::create('/', 'GET', [], [], [], ['PHP_AUTH_USER' => 'foo@bar.com', 'PHP_AUTH_PW' => 'secret']);
+         $guard->setRequest($request);
+ 

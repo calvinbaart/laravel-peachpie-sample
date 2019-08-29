@@ -19,8 +19,13 @@ class Helpers
         return view($view, $data, $mergeData);
     }
 
-    public static function artisan(string $command, array $arguments = [])
+    public static function artisan(string $command, array $arguments = []): int
     {
         return Artisan::call($command, $arguments);
+    }
+
+    public static function app(): \Illuminate\Contracts\Foundation\Application
+    {
+        return app();
     }
 }

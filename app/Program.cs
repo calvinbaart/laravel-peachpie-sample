@@ -4,8 +4,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
 using System.IO;
+
 using Laravel.AspNetCore;
 using Laravel.Sdk;
+using Illuminate;
+using Illuminate.Contracts.Http;
 using App.Http.Controllers;
 
 namespace peachserver
@@ -52,9 +55,18 @@ namespace peachserver
 
             LaravelLoader.AppStarted += (laravelApp) =>
             {
-                System.Console.WriteLine("AppStarted, declaring types");
                 laravelApp.Context.DeclareType<TestController>();
             };
+
+            // Type type = typeof(App.Providers.AppServiceProvider).Assembly.GetType("<Root>bootstrap.app_php");
+            // var method = type.GetMethod("<Main>", BindingFlags.Public | BindingFlags.Static);
+            // var app = method.Invoke(null, new object[] {
+                
+            // });
+
+            // Kernel app = Helpers.app("\\Illuminate\\Contracts\\Http\\Kernel");
+
+            // Console.WriteLine("AppStarted!");
         }
     }
 }
