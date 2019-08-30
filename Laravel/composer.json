@@ -107,9 +107,7 @@
         }
     },
     "autoload-dev": {
-        "files": [
-            "tests/Database/stubs/MigrationCreatorFakeMigration.php"
-        ],
+        "files": [],
         "psr-4": {
             "Illuminate\\Tests\\": "tests/"
         }

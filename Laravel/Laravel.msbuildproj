@@ -18,6 +18,8 @@
       dummy_files/*.php;
       vendor/**/*.php;
       src/**/*.php;
+      bootstrap/**/*.php;
+      public/**/*.php;
     " Exclude="
         **/Testing/**;
         **/Tests/**;

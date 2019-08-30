@@ -9,6 +9,7 @@ app/obj
 Laravel/bin
 Laravel/obj
 Laravel/tests
+Laravel/storage
 Laravel.Sdk/bin
 Laravel.Sdk/obj
 Laravel.AspNetCore/bin
