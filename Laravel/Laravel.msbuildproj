@@ -1,4 +1,6 @@
 ﻿<Project Sdk="Peachpie.NET.Sdk/0.9.9-dev">
+  <Import Project="..\build\Settings.props" />
+
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <VersionPrefix>$(LaravelVersion)</VersionPrefix>
@@ -6,7 +8,6 @@
     <NoWarn>PHP0125,PHP5011,PHP5008,PHP5006,PHP5012</NoWarn>
     <Copyright>Laravel</Copyright>
     <Description>Laravel project transformed to managed .NET Standard library.</Description>
-    <DefineConstants>PEACHPIE</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,6 +19,8 @@
       dummy_files/*.php;
       vendor/**/*.php;
       src/**/*.php;
+      bootstrap/**/*.php;
+      public/**/*.php;
     " Exclude="
         **/Testing/**;
         **/Tests/**;

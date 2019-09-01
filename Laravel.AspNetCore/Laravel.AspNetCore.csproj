@@ -3,6 +3,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <VersionPrefix>$(LaravelVersion)</VersionPrefix>
+    <PackageVersion>$(LaravelVersion)</PackageVersion>
   </PropertyGroup>
 
   <ItemGroup>

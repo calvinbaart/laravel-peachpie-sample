@@ -1,0 +1,13 @@
+--- src/Illuminate/Foundation/Application.php	2019-08-30 23:05:50.000000000 +0200
++++ src/Illuminate/Foundation/Application2.php	2019-08-30 23:20:39.000000000 +0200
+@@ -157,6 +157,10 @@
+         $this->registerBaseServiceProviders();
+         $this->registerCoreContainerAliases();
+ 
++        if (!class_exists("\\Laravel\\Sdk\\LaravelApp")) {
++            return;
++        }
++
+         $this->laravelApp = new class extends \Laravel\Sdk\LaravelApp
+         {
+             public function GetVersion()
