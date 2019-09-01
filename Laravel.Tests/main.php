@@ -17,19 +17,14 @@ if (!class_exists("\Pchp\Core\Context")) {
 
 require_once(__DIR__ . "/vendor/autoload.php");
 
-function main()
-{
-    if (!ini_get('date.timezone')) {
-        ini_set('date.timezone', 'UTC');
-    }
-
-    $options = getopt('', array('prepend:'));
-    if (isset($options['prepend'])) {
-        require $options['prepend'];
-    }
-    unset($options);
-
-    PHPUnit\TextUI\Command::main();
+if (!ini_get('date.timezone')) {
+    ini_set('date.timezone', 'UTC');
 }
 
-main();
+$options = getopt('', array('prepend:'));
+if (isset($options['prepend'])) {
+    require $options['prepend'];
+}
+unset($options);
+
+PHPUnit\TextUI\Command::main();
