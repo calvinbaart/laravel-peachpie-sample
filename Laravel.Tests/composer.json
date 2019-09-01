@@ -16,7 +16,8 @@
         "psr-4": {
             "Illuminate\\Foundation\\Testing\\": "src/Illuminate/Foundation/Testing",
             "Illuminate\\Support\\Testing\\": "src/Illuminate/Support/Testing",
-            "Illuminate\\Http\\Testing\\": "src/Illuminate/Http/Testing"
+            "Illuminate\\Http\\Testing\\": "src/Illuminate/Http/Testing",
+            "Illuminate\\Tests\\": "tests"
         }
     },
     "scripts": {
