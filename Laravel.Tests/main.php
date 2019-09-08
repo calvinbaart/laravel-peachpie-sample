@@ -9,7 +9,7 @@
 * file that was distributed with this source code.
 */
 
-if (!class_exists("\Pchp\Core\Context")) {
+if (!defined("PEACHPIE_VERSION")) {
     require_once(__DIR__ . "/../Laravel/vendor/laravel_autoload.php");
 } else {
     require_once(__DIR__ . "/vendor/laravel_autoload.php");

@@ -7,7 +7,7 @@
     <VersionPrefix Condition=" '$(VersionPrefix)'=='' ">1.0.0</VersionPrefix>
 
     <PeachpieVersion>0.9.9-dev</PeachpieVersion>
-    <LaravelVersion>5.8.34</LaravelVersion>
+    <LaravelVersion>6.0.1</LaravelVersion>
 
     <!-- metadata generation -->
     <GenerateAssemblyVersionAttribute>true</GenerateAssemblyVersionAttribute>

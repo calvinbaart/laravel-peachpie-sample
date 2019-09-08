@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "df0e955b57f66d89c7cc760abcb394e1",
+    "content-hash": "c7f81fff42293ad91ef7d947b6f24a96",
     "packages": [
         {
             "name": "calvinbaart/laravel-sdk",
@@ -12,10 +12,10 @@
             "dist": {
                 "type": "path",
                 "url": "../Laravel.ComposerDummy",
-                "reference": "19680cea3a152c54230d5bd88029d8a7990be0f8"
+                "reference": "74c2b4cfd140d512f5da884bbcde559386b5fc62"
             },
             "require": {
-                "php": "^7.1.3"
+                "php": "^7.2"
             },
             "replace": {
                 "doctrine/inflector": "v1.3.0",
@@ -23,66 +23,68 @@
                 "dragonmantank/cron-expression": "v2.3.0",
                 "egulias/email-validator": "2.1.11",
                 "erusev/parsedown": "1.7.3",
-                "fideloper/proxy": "4.2.0",
-                "illuminate/auth": "v5.8.32",
-                "illuminate/broadcasting": "v5.8.32",
-                "illuminate/bus": "v5.8.32",
-                "illuminate/cache": "v5.8.32",
-                "illuminate/config": "v5.8.32",
-                "illuminate/console": "v5.8.32",
-                "illuminate/container": "v5.8.32",
-                "illuminate/contracts": "v5.8.32",
-                "illuminate/cookie": "v5.8.32",
-                "illuminate/database": "v5.8.32",
-                "illuminate/encryption": "v5.8.32",
-                "illuminate/events": "v5.8.32",
-                "illuminate/filesystem": "v5.8.32",
-                "illuminate/hashing": "v5.8.32",
-                "illuminate/http": "v5.8.32",
-                "illuminate/log": "v5.8.32",
-                "illuminate/mail": "v5.8.32",
-                "illuminate/notifications": "v5.8.32",
-                "illuminate/pagination": "v5.8.32",
-                "illuminate/pipeline": "v5.8.32",
-                "illuminate/queue": "v5.8.32",
-                "illuminate/redis": "v5.8.32",
-                "illuminate/routing": "v5.8.32",
-                "illuminate/session": "v5.8.32",
-                "illuminate/support": "v5.8.32",
-                "illuminate/translation": "v5.8.32",
-                "illuminate/validation": "v5.8.32",
-                "illuminate/view": "v5.8.32",
+                "fideloper/proxy": "4.2.1",
+                "illuminate/auth": "v6.0.1",
+                "illuminate/broadcasting": "v6.0.1",
+                "illuminate/bus": "v6.0.1",
+                "illuminate/cache": "v6.0.1",
+                "illuminate/config": "v6.0.1",
+                "illuminate/console": "v6.0.1",
+                "illuminate/container": "v6.0.1",
+                "illuminate/contracts": "v6.0.1",
+                "illuminate/cookie": "v6.0.1",
+                "illuminate/database": "v6.0.1",
+                "illuminate/encryption": "v6.0.1",
+                "illuminate/events": "v6.0.1",
+                "illuminate/filesystem": "v6.0.1",
+                "illuminate/hashing": "v6.0.1",
+                "illuminate/http": "v6.0.1",
+                "illuminate/log": "v6.0.1",
+                "illuminate/mail": "v6.0.1",
+                "illuminate/notifications": "v6.0.1",
+                "illuminate/pagination": "v6.0.1",
+                "illuminate/pipeline": "v6.0.1",
+                "illuminate/queue": "v6.0.1",
+                "illuminate/redis": "v6.0.1",
+                "illuminate/routing": "v6.0.1",
+                "illuminate/session": "v6.0.1",
+                "illuminate/support": "v6.0.1",
+                "illuminate/translation": "v6.0.1",
+                "illuminate/validation": "v6.0.1",
+                "illuminate/view": "v6.0.1",
                 "jeremeamia/superclosure": "2.4.0",
-                "laravel/framework": "v5.8.32",
-                "league/flysystem": "1.0.53",
-                "monolog/monolog": "1.24.0",
-                "nesbot/carbon": "2.22.3",
-                "nikic/php-parser": "v4.2.3",
-                "opis/closure": "3.3.1",
+                "laravel/framework": "v6.0.1",
+                "league/flysystem": "1.0.55",
+                "monolog/monolog": "2.0.0",
+                "nesbot/carbon": "2.24.0",
+                "nikic/php-parser": "v4.2.4",
+                "opis/closure": "3.4.0",
                 "paragonie/random_compat": "v9.99.99",
+                "paragonie/sodium_compat": "v1.10.1",
                 "phpoption/phpoption": "1.5.0",
                 "psr/cache": "1.0.1",
                 "psr/container": "1.0.0",
                 "psr/event-dispatcher": "1.0.0",
                 "psr/log": "1.1.0",
                 "psr/simple-cache": "1.0.1",
+                "pusher/pusher-php-server": "v4.0.0",
                 "ramsey/uuid": "3.8.0",
                 "swiftmailer/swiftmailer": "v6.2.1",
-                "symfony/cache": "v4.3.3",
+                "symfony/cache": "v4.3.4",
                 "symfony/cache-contracts": "v1.1.5",
-                "symfony/config": "v4.3.3",
-                "symfony/console": "v4.3.3",
-                "symfony/css-selector": "v4.3.3",
-                "symfony/debug": "v4.3.3",
-                "symfony/dependency-injection": "v4.3.3",
-                "symfony/event-dispatcher": "v4.3.3",
+                "symfony/config": "v4.3.4",
+                "symfony/console": "v4.3.4",
+                "symfony/css-selector": "v4.3.4",
+                "symfony/debug": "v4.3.4",
+                "symfony/dependency-injection": "v4.3.4",
+                "symfony/event-dispatcher": "v4.3.4",
                 "symfony/event-dispatcher-contracts": "v1.1.5",
-                "symfony/expression-language": "v4.3.3",
-                "symfony/filesystem": "v4.3.3",
-                "symfony/finder": "v4.3.3",
-                "symfony/http-foundation": "v4.3.3",
-                "symfony/http-kernel": "v4.3.3",
-                "symfony/mime": "v4.3.3",
+                "symfony/expression-language": "v4.3.4",
+                "symfony/filesystem": "v4.3.4",
+                "symfony/finder": "v4.3.4",
+                "symfony/http-foundation": "v4.3.4",
+                "symfony/http-kernel": "v4.3.4",
+                "symfony/mime": "v4.3.4",
                 "symfony/polyfill-ctype": "v1.12.0",
                 "symfony/polyfill-iconv": "v1.12.0",
                 "symfony/polyfill-intl-idn": "v1.12.0",
@@ -91,15 +93,15 @@
                 "symfony/polyfill-php72": "v1.12.0",
                 "symfony/polyfill-php73": "v1.12.0",
                 "symfony/polyfill-util": "v1.12.0",
-                "symfony/process": "v4.3.3",
-                "symfony/routing": "v4.3.3",
-                "symfony/service-contracts": "v1.1.5",
-                "symfony/translation": "v4.3.3",
-                "symfony/translation-contracts": "v1.1.5",
-                "symfony/var-dumper": "v4.3.3",
-                "symfony/var-exporter": "v4.3.3",
+                "symfony/process": "v4.3.4",
+                "symfony/routing": "v4.3.4",
+                "symfony/service-contracts": "v1.1.6",
+                "symfony/translation": "v4.3.4",
+                "symfony/translation-contracts": "v1.1.6",
+                "symfony/var-dumper": "v4.3.4",
+                "symfony/var-exporter": "v4.3.4",
                 "tijsverkoyen/css-to-inline-styles": "2.2.1",
-                "vlucas/phpdotenv": "v3.4.0"
+                "vlucas/phpdotenv": "v3.5.0"
             },
             "type": "project",
             "license": [
@@ -382,29 +384,29 @@
         },
         {
             "name": "orchestra/testbench",
-            "version": "v3.8.4",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/orchestral/testbench.git",
-                "reference": "d1248e014d4d782dd5ad92cf772aeddf3abe84a2"
+                "reference": "bde8b826bde3bd39a2a87e6cd328501e19c60cc9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/orchestral/testbench/zipball/d1248e014d4d782dd5ad92cf772aeddf3abe84a2",
-                "reference": "d1248e014d4d782dd5ad92cf772aeddf3abe84a2",
+                "url": "https://api.github.com/repos/orchestral/testbench/zipball/bde8b826bde3bd39a2a87e6cd328501e19c60cc9",
+                "reference": "bde8b826bde3bd39a2a87e6cd328501e19c60cc9",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": "~5.8.19",
+                "laravel/framework": "^6.0",
                 "mockery/mockery": "^1.0",
-                "orchestra/testbench-core": "~3.8.6",
-                "php": ">=7.1",
-                "phpunit/phpunit": "^7.5 || ^8.0"
+                "orchestra/testbench-core": "^4.0",
+                "php": ">=7.2",
+                "phpunit/phpunit": "^8.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.8-dev"
+                    "dev-master": "4.0-dev"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -428,43 +430,43 @@
                 "orchestral",
                 "testing"
             ],
-            "time": "2019-08-04T04:14:12+00:00"
+            "time": "2019-09-03T20:02:19+00:00"
         },
         {
             "name": "orchestra/testbench-core",
-            "version": "v3.8.6",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/orchestral/testbench-core.git",
-                "reference": "fbdca0c5106ebf6d060c7f1fbdbbeeb3f4a5a725"
+                "reference": "de4b741bdee89cc8aba5c03fa8dd0e485001a0d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/orchestral/testbench-core/zipball/fbdca0c5106ebf6d060c7f1fbdbbeeb3f4a5a725",
-                "reference": "fbdca0c5106ebf6d060c7f1fbdbbeeb3f4a5a725",
+                "url": "https://api.github.com/repos/orchestral/testbench-core/zipball/de4b741bdee89cc8aba5c03fa8dd0e485001a0d5",
+                "reference": "de4b741bdee89cc8aba5c03fa8dd0e485001a0d5",
                 "shasum": ""
             },
             "require": {
                 "fzaninotto/faker": "^1.4",
-                "php": ">=7.1"
+                "php": ">=7.2"
             },
             "require-dev": {
-                "laravel/framework": "~5.8.3",
+                "laravel/framework": "^6.0",
                 "laravel/laravel": "dev-master",
                 "mockery/mockery": "^1.0",
-                "phpunit/phpunit": "^7.5 || ^8.0"
+                "phpunit/phpunit": "^8.0"
             },
             "suggest": {
-                "laravel/framework": "Required for testing (~5.8.19).",
+                "laravel/framework": "Required for testing (^6.0).",
                 "mockery/mockery": "Allow to use Mockery for testing (^1.0).",
-                "orchestra/testbench-browser-kit": "Allow to use legacy Laravel BrowserKit for testing (^3.8).",
-                "orchestra/testbench-dusk": "Allow to use Laravel Dusk for testing (^3.8).",
-                "phpunit/phpunit": "Allow to use PHPUnit for testing (^7.5 || ^8.0)."
+                "orchestra/testbench-browser-kit": "Allow to use legacy Laravel BrowserKit for testing (^4.0).",
+                "orchestra/testbench-dusk": "Allow to use Laravel Dusk for testing (^4.0).",
+                "phpunit/phpunit": "Allow to use PHPUnit for testing (^8.0)."
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.8-dev"
+                    "dev-master": "4.0-dev"
                 }
             },
             "autoload": {
@@ -493,7 +495,7 @@
                 "orchestral",
                 "testing"
             ],
-            "time": "2019-08-04T02:31:04+00:00"
+            "time": "2019-09-03T20:00:44+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -580,18 +582,18 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "role": "Developer",
-                    "email": "arne@blankerts.de"
+                    "email": "arne@blankerts.de",
+                    "role": "Developer"
                 },
                 {
                     "name": "Sebastian Heuer",
-                    "role": "Developer",
-                    "email": "sebastian@phpeople.de"
+                    "email": "sebastian@phpeople.de",
+                    "role": "Developer"
                 },
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "Developer",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "Developer"
                 }
             ],
             "description": "Library for handling version information and constraints",
@@ -862,8 +864,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "lead",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
                 }
             ],
             "description": "Library that provides collection, processing, and rendering functionality for PHP code coverage information.",
@@ -913,8 +915,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "lead",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
                 }
             ],
             "description": "FilterIterator implementation that filters files based on a list of suffixes.",
@@ -955,8 +957,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "lead",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
                 }
             ],
             "description": "Simple template engine.",
@@ -1004,8 +1006,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "lead",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
                 }
             ],
             "description": "Utility class for timing",
@@ -1134,8 +1136,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "lead",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
                 }
             ],
             "description": "The PHP Unit Testing framework.",
@@ -1711,8 +1713,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "lead",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
                 }
             ],
             "description": "Collection of value objects that represent the types of the PHP type system",
@@ -1754,8 +1756,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "role": "lead",
-                    "email": "sebastian@phpunit.de"
+                    "email": "sebastian@phpunit.de",
+                    "role": "lead"
                 }
             ],
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
@@ -1804,16 +1806,16 @@
         },
         {
             "name": "webmozart/assert",
-            "version": "1.4.0",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webmozart/assert.git",
-                "reference": "83e253c8e0be5b0257b881e1827274667c5c17a9"
+                "reference": "88e6d84706d09a236046d686bbea96f07b3a34f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/83e253c8e0be5b0257b881e1827274667c5c17a9",
-                "reference": "83e253c8e0be5b0257b881e1827274667c5c17a9",
+                "url": "https://api.github.com/repos/webmozart/assert/zipball/88e6d84706d09a236046d686bbea96f07b3a34f4",
+                "reference": "88e6d84706d09a236046d686bbea96f07b3a34f4",
                 "shasum": ""
             },
             "require": {
@@ -1821,8 +1823,7 @@
                 "symfony/polyfill-ctype": "^1.8"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.6",
-                "sebastian/version": "^1.0.1"
+                "phpunit/phpunit": "^4.8.36 || ^7.5.13"
             },
             "type": "library",
             "extra": {
@@ -1851,7 +1852,7 @@
                 "check",
                 "validate"
             ],
-            "time": "2018-12-25T11:19:39+00:00"
+            "time": "2019-08-24T08:43:50+00:00"
         }
     ],
     "packages-dev": [],

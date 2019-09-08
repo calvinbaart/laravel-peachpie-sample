@@ -22,10 +22,8 @@
     <Compile Include="
       app/**/*.php;
       config/**/*.php;
-      bootstrap/**/*.php;
       routes/**/*.php;
       vendor/**/*.php;
-      public/index.php;
       storage/framework/views/**/*.php;
     " Exclude="
         **/Testing/**;
