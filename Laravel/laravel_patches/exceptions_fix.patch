@@ -5,8 +5,8 @@
  namespace Illuminate\Foundation\Bootstrap;
 
 +use Throwable;
- use Exception;
  use ErrorException;
+ use Exception;
  use Illuminate\Contracts\Debug\ExceptionHandler;
 @@ -83,6 +84,10 @@
      public function handleException($e)

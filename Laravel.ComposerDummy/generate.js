@@ -11,12 +11,12 @@ const set2 = laravelJson.replace;
 
 for (const key in set2) {
     if (set2[key] == "self.version") {
-        set2[key] = "v6.0.1";
+        set2[key] = "v6.0.3";
     }
 
     set1[key] = set2[key];
 }
 
-set1["laravel/framework"] = "v6.0.1";
+set1["laravel/framework"] = "v6.0.3";
 
 console.log(JSON.stringify(set1, null, 4));

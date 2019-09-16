@@ -35,11 +35,11 @@
         "pusher/pusher-php-server": "~4.0",
         "ramsey/uuid": "^3.7",
         "swiftmailer/swiftmailer": "^6.0",
-        "symfony/config": "^4.3",
+        "symfony/config": "^4.3.4",
         "symfony/console": "^4.3.4",
         "symfony/debug": "^4.3.4",
-        "symfony/dependency-injection": "^4.3",
-        "symfony/expression-language": "^4.3",
+        "symfony/dependency-injection": "^4.3.4",
+        "symfony/expression-language": "^4.3.4",
         "symfony/finder": "^4.3.4",
         "symfony/http-foundation": "^4.3.4",
         "symfony/http-kernel": "^4.3.4",
@@ -93,7 +93,7 @@
         "symfony/css-selector": "^4.2",
         "symfony/dom-crawler": "^4.2",
         "true/punycode": "^2.1",
-        "symfony/cache": "^4.3"
+        "symfony/cache": "^4.3.4"
     },
     "autoload": {
         "files": [
