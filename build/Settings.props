@@ -6,7 +6,7 @@
     <!-- common version -->
     <VersionPrefix Condition=" '$(VersionPrefix)'=='' ">1.0.0</VersionPrefix>
 
-    <PeachpieVersion>0.9.9-dev</PeachpieVersion>
+    <PeachpieVersion>1.0.0-dev</PeachpieVersion>
     <LaravelVersion>6.0.3</LaravelVersion>
 
     <!-- metadata generation -->
