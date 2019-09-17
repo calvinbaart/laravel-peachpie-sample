@@ -8,10 +8,10 @@ install:
   - ./build/install_dependencies_ubuntu16.sh
   - git clone https://github.com/peachpiecompiler/peachpie.git third-party/peachpie
   - cd ./third-party/peachpie
-  - dotnet msbuild /t:restore "./Peachpie.sln" /v:m /p:Version=1.0.0-dev,Configuration=Release
-  - dotnet restore "./src/Peachpie.NET.Sdk" /v:m /p:Version=1.0.0-dev,Configuration=Release
-  - dotnet msbuild /t:build "./Peachpie.sln" /v:m /p:Version=1.0.0-dev,Configuration=Release || true
-  - dotnet build ./src/Peachpie.Library.Scripting/ /p:TargetFrameworks=netstandard2.0
+  - dotnet msbuild /t:restore "./Peachpie.sln" /v:m /p:Version=1.0.0-dev,Configuration=Debug
+  - dotnet restore "./src/Peachpie.NET.Sdk" /v:m /p:Version=1.0.0-dev,Configuration=Debug
+  - dotnet msbuild /t:build "./Peachpie.sln" /v:m /p:Version=1.0.0-dev,Configuration=Debug || true
+  - dotnet build ./src/Peachpie.Library.Scripting/ /p:Version=1.0.0-dev,Configuration=Debug,TargetFrameworks=netstandard2.0
   - cd .nugs
   - rm -rf ~/.nuget/NuGet/NuGet.Config
   - sed "s~PEACHPIE~`pwd`~g" ../../../build/nuget.config > ~/.nuget/NuGet/NuGet.Config
