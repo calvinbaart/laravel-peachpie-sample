@@ -1,8 +1,8 @@
---- src/Illuminate/Foundation/Application.php	2019-08-15 21:33:01.000000000 +0200
-+++ src/Illuminate/Foundation/Application.php	2019-08-15 21:53:42.000000000 +0200
-@@ -137,6 +137,11 @@
+--- src/Illuminate/Foundation/Application.php	2019-10-28 22:21:05.124170000 +0100
++++ src/Illuminate/Foundation/Application2.php	2019-10-28 22:22:09.577705600 +0100
+@@ -138,6 +138,11 @@
      protected $namespace;
-
+ 
      /**
 +     * @var LaravelApp
 +     */
@@ -12,7 +12,7 @@
       * Create a new Illuminate application instance.
       *
       * @param  string|null  $basePath
-@@ -151,6 +156,29 @@
+@@ -152,6 +157,29 @@
          $this->registerBaseBindings();
          $this->registerBaseServiceProviders();
          $this->registerCoreContainerAliases();
@@ -40,5 +40,5 @@
 +            $peachpie_laravel_loader->InternalAppStarted($this->laravelApp);
 +        }
      }
-
+ 
      /**

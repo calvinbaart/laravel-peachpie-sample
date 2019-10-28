@@ -1,6 +1,6 @@
---- src/Illuminate/Foundation/Application.php	2019-08-30 23:05:50.000000000 +0200
-+++ src/Illuminate/Foundation/Application2.php	2019-08-30 23:20:39.000000000 +0200
-@@ -157,6 +157,10 @@
+--- src/Illuminate/Foundation/Application.php	2019-10-28 22:24:16.955162900 +0100
++++ src/Illuminate/Foundation/Application2.php	2019-10-28 22:25:01.393104900 +0100
+@@ -158,6 +158,10 @@
          $this->registerBaseServiceProviders();
          $this->registerCoreContainerAliases();
  
