@@ -1,17 +1,19 @@
---- src/Illuminate/Foundation/helpers.php	2019-10-28 22:16:59.315403300 +0100
-+++ src/Illuminate/Foundation/helpers2.php	2019-10-28 22:16:55.092000000 +0100
-@@ -716,6 +716,14 @@
-             }
- 
-             return value($rescue);
-+        } catch (\System\Exception $systemException) {
-+            $e = new \Exception($systemException->ToString());
-+
-+            if ($report) {
-+                report($e);
-+            }
-+
-+            return value($rescue);
-         }
-     }
- }
+*** src/Illuminate/Foundation/helpers2.php	2020-02-07 19:28:09.782000000 +0100
+--- src/Illuminate/Foundation/helpers.php	2020-02-07 19:28:47.677500200 +0100
+*************** if (! function_exists('rescue')) {
+*** 716,721 ****
+--- 716,729 ----
+              }
+  
+              return $rescue instanceof Closure ? $rescue($e) : $rescue;
++         } catch (\System\Exception $systemException) {
++             $e = new \Exception($systemException->ToString());
++ 
++             if ($report) {
++                 report($e);
++             }
++ 
++             return $rescue instanceof Closure ? $rescue($e) : $rescue;
+          }
+      }
+  }

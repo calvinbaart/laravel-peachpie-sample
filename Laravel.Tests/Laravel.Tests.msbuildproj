@@ -15,7 +15,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="&#xA;      main.php;&#xA;      mock_classes/**/*.php;&#xA;      tests/**/*.php;&#xA;      vendor/**/*.php;&#xA;      src/Illuminate/Foundation/Testing/**/*.php;&#xA;      src/Illuminate/Support/Testing/**/*.php;&#xA;      src/Illuminate/Http/Testing/**/*.php;&#xA;    " Exclude="&#xA;      vendor/**/tests/**;&#xA;      vendor/orchestra/testbench-core/src/Http/Middleware/TrustProxies.php;&#xA;      vendor/mockery/mockery/library/Mockery/Mock.php;&#xA;      vendor\mockery\mockery\library\Mockery\Adapter\Phpunit\Legacy\TestListenerForV5.php;&#xA;      vendor\mockery\mockery\library\Mockery\Adapter\Phpunit\Legacy\TestListenerForV6.php;&#xA;      vendor/fzaninotto/faker/test/**;&#xA;      tests/Routing/fixtures/**;&#xA;    " />
+    <Compile Include="
+      main.php;
+      mock_classes/**/*.php;
+      tests/**/*.php;
+      vendor/**/*.php;
+      src/Illuminate/Foundation/Testing/**/*.php;
+      src/Illuminate/Support/Testing/**/*.php;
+      src/Illuminate/Http/Testing/**/*.php;" Exclude="
+        vendor/**/tests/**;
+        vendor/orchestra/testbench-core/src/Http/Middleware/TrustProxies.php;
+        vendor/mockery/mockery/library/Mockery/Mock.php;
+        vendor\mockery\mockery\library\Mockery\Adapter\Phpunit\Legacy\TestListenerForV5.php;
+        vendor\mockery\mockery\library\Mockery\Adapter\Phpunit\Legacy\TestListenerForV6.php;
+        vendor/fzaninotto/faker/test/**;
+        tests/Routing/fixtures/**;
+        **/php5**;" />
 
     <PackageReference Include="Peachpie.Library.PDO.Sqlite" Version="$(PeachpieVersion)" />
     <PackageReference Include="System.Composition.AttributedModel" Version="1.1.0" />

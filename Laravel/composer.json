@@ -99,7 +99,6 @@
         "files": [
             "dummy_files/dummy_browserkit.php",
             "dummy_files/dummy_peachpie.php",
-            "dummy_files/dummy_swift_mime_message.php",
             "src/Illuminate/Foundation/helpers.php",
             "src/Illuminate/Support/helpers.php"
         ],
