@@ -41,6 +41,7 @@
         vendor/symfony/polyfill-util/TestListener.php;
         vendor/symfony/http-kernel/Controller/ArgumentResolver/ServiceValueResolver.php;
         vendor/calvinbaart/laravel-peachpie/src/Illuminate/Cache/ApcWrapper.php;
+        **/php5**;
       "/>
       <PackageReference Include="Peachpie.Library.PDO.MySql" Version="$(PeachpieVersion)" />
   </ItemGroup>
